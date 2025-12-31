@@ -9,7 +9,10 @@
       "Bash(popd:*)",
       "Bash(Select-Object -First 50)",
       "Bash(Select-Object -First 100)",
-      "Bash(Get-Location)"
+      "Bash(Get-Location)",
+      "Bash(npm run deploy:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
