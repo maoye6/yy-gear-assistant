@@ -1,0 +1,393 @@
+{
+  "version": "1.0.0",
+  "description": "各流派理论最优装备搭配配置（预计算）",
+  "builds": {
+    "LieShi_Jun": {
+      "school": "LieShi",
+      "subSchool": "LieShi_Jun",
+      "name": "裂石·钧 - 纯会心暴击流",
+      "description": "追求极致会心暴击，适合横刀/枪系输出，最大化期望伤害",
+      "expectedDamage": 12500,
+      "createdAt": "2025-12-31",
+      "version": "1.0.0",
+      "slots": {
+        "MainWeapon": {
+          "slot": "MainWeapon",
+          "gong": [
+            {
+              "name": "最大外功",
+              "type": "max_attack",
+              "value": 90.6,
+              "range": [45.3, 90.6],
+              "quality": "Legendary"
+            }
+          ],
+          "shang": {
+            "name": "最大外功",
+            "type": "max_attack",
+            "value": 90.6,
+            "range": [45.3, 90.6],
+            "quality": "Legendary"
+          },
+          "jue": {
+            "name": "会心率",
+            "type": "crit_rate",
+            "value": 0.104,
+            "range": [0.052, 0.104],
+            "quality": "Legendary"
+          },
+          "zhi": {
+            "name": "最大裂石攻击",
+            "type": "max_lieshi_damage",
+            "value": 44.2,
+            "range": [22.1, 44.2],
+            "quality": "Legendary"
+          },
+          "yu": {
+            "name": "敏",
+            "type": "agility",
+            "value": 57.4,
+            "range": [28.7, 57.4],
+            "quality": "Legendary"
+          },
+          "dingyin": {
+            "name": "外功穿透",
+            "type": "defense_penetration",
+            "value": 12.8,
+            "range": [7.7, 12.8],
+            "quality": "Legendary"
+          }
+        },
+        "SubWeapon": {
+          "slot": "SubWeapon",
+          "gong": [
+            {
+              "name": "最大外功",
+              "type": "max_attack",
+              "value": 90.6,
+              "range": [45.3, 90.6],
+              "quality": "Legendary"
+            }
+          ],
+          "shang": {
+            "name": "最大外功",
+            "type": "max_attack",
+            "value": 90.6,
+            "range": [45.3, 90.6],
+            "quality": "Legendary"
+          },
+          "jue": {
+            "name": "会心率",
+            "type": "crit_rate",
+            "value": 0.104,
+            "range": [0.052, 0.104],
+            "quality": "Legendary"
+          },
+          "zhi": {
+            "name": "最大裂石攻击",
+            "type": "max_lieshi_damage",
+            "value": 44.2,
+            "range": [22.1, 44.2],
+            "quality": "Legendary"
+          },
+          "yu": {
+            "name": "敏",
+            "type": "agility",
+            "value": 57.4,
+            "range": [28.7, 57.4],
+            "quality": "Legendary"
+          },
+          "dingyin": {
+            "name": "外功穿透",
+            "type": "defense_penetration",
+            "value": 12.8,
+            "range": [7.7, 12.8],
+            "quality": "Legendary"
+          }
+        },
+        "Ring": {
+          "slot": "Ring",
+          "gong": [
+            {
+              "name": "最大外功",
+              "type": "max_attack",
+              "value": 90.6,
+              "range": [45.3, 90.6],
+              "quality": "Legendary"
+            }
+          ],
+          "shang": {
+            "name": "全武学增效",
+            "type": "damage_bonus_all_martial",
+            "value": 0.036,
+            "range": [0.018, 0.036],
+            "quality": "Legendary"
+          },
+          "jue": {
+            "name": "会心率",
+            "type": "crit_rate",
+            "value": 0.104,
+            "range": [0.052, 0.104],
+            "quality": "Legendary"
+          },
+          "zhi": {
+            "name": "最大裂石攻击",
+            "type": "max_lieshi_damage",
+            "value": 44.2,
+            "range": [22.1, 44.2],
+            "quality": "Legendary"
+          },
+          "yu": {
+            "name": "敏",
+            "type": "agility",
+            "value": 57.4,
+            "range": [28.7, 57.4],
+            "quality": "Legendary"
+          },
+          "dingyin": {
+            "name": "外功穿透",
+            "type": "defense_penetration",
+            "value": 12.8,
+            "range": [7.7, 12.8],
+            "quality": "Legendary"
+          }
+        },
+        "Pendant": {
+          "slot": "Pendant",
+          "gong": [
+            {
+              "name": "最大外功",
+              "type": "max_attack",
+              "value": 90.6,
+              "range": [45.3, 90.6],
+              "quality": "Legendary"
+            }
+          ],
+          "shang": {
+            "name": "全武学增效",
+            "type": "damage_bonus_all_martial",
+            "value": 0.036,
+            "range": [0.018, 0.036],
+            "quality": "Legendary"
+          },
+          "jue": {
+            "name": "会心率",
+            "type": "crit_rate",
+            "value": 0.104,
+            "range": [0.052, 0.104],
+            "quality": "Legendary"
+          },
+          "zhi": {
+            "name": "最大裂石攻击",
+            "type": "max_lieshi_damage",
+            "value": 44.2,
+            "range": [22.1, 44.2],
+            "quality": "Legendary"
+          },
+          "yu": {
+            "name": "敏",
+            "type": "agility",
+            "value": 57.4,
+            "range": [28.7, 57.4],
+            "quality": "Legendary"
+          },
+          "dingyin": {
+            "name": "外功穿透",
+            "type": "defense_penetration",
+            "value": 12.8,
+            "range": [7.7, 12.8],
+            "quality": "Legendary"
+          }
+        },
+        "Head": {
+          "slot": "Head",
+          "gong": [
+            {
+              "name": "会心率",
+              "type": "crit_rate",
+              "value": 0.104,
+              "range": [0.052, 0.104],
+              "quality": "Legendary"
+            }
+          ],
+          "shang": {
+            "name": "会心率",
+            "type": "crit_rate",
+            "value": 0.104,
+            "range": [0.052, 0.104],
+            "quality": "Legendary"
+          },
+          "jue": {
+            "name": "最大外功",
+            "type": "max_attack",
+            "value": 90.6,
+            "range": [45.3, 90.6],
+            "quality": "Legendary"
+          },
+          "zhi": {
+            "name": "最大裂石攻击",
+            "type": "max_lieshi_damage",
+            "value": 44.2,
+            "range": [22.1, 44.2],
+            "quality": "Legendary"
+          },
+          "yu": {
+            "name": "敏",
+            "type": "agility",
+            "value": 57.4,
+            "range": [28.7, 57.4],
+            "quality": "Legendary"
+          },
+          "dingyin": {
+            "name": "技能增效",
+            "type": "damage_bonus_specific_martial",
+            "value": 0.07,
+            "range": [0.035, 0.07],
+            "quality": "Legendary"
+          }
+        },
+        "Chest": {
+          "slot": "Chest",
+          "gong": [
+            {
+              "name": "会心率",
+              "type": "crit_rate",
+              "value": 0.104,
+              "range": [0.052, 0.104],
+              "quality": "Legendary"
+            }
+          ],
+          "shang": {
+            "name": "会心率",
+            "type": "crit_rate",
+            "value": 0.104,
+            "range": [0.052, 0.104],
+            "quality": "Legendary"
+          },
+          "jue": {
+            "name": "最大外功",
+            "type": "max_attack",
+            "value": 90.6,
+            "range": [45.3, 90.6],
+            "quality": "Legendary"
+          },
+          "zhi": {
+            "name": "最大裂石攻击",
+            "type": "max_lieshi_damage",
+            "value": 44.2,
+            "range": [22.1, 44.2],
+            "quality": "Legendary"
+          },
+          "yu": {
+            "name": "敏",
+            "type": "agility",
+            "value": 57.4,
+            "range": [28.7, 57.4],
+            "quality": "Legendary"
+          },
+          "dingyin": {
+            "name": "技能增效",
+            "type": "damage_bonus_specific_martial",
+            "value": 0.07,
+            "range": [0.035, 0.07],
+            "quality": "Legendary"
+          }
+        },
+        "Legs": {
+          "slot": "Legs",
+          "gong": [
+            {
+              "name": "会心率",
+              "type": "crit_rate",
+              "value": 0.104,
+              "range": [0.052, 0.104],
+              "quality": "Legendary"
+            }
+          ],
+          "shang": {
+            "name": "会心率",
+            "type": "crit_rate",
+            "value": 0.104,
+            "range": [0.052, 0.104],
+            "quality": "Legendary"
+          },
+          "jue": {
+            "name": "最大外功",
+            "type": "max_attack",
+            "value": 90.6,
+            "range": [45.3, 90.6],
+            "quality": "Legendary"
+          },
+          "zhi": {
+            "name": "最大裂石攻击",
+            "type": "max_lieshi_damage",
+            "value": 44.2,
+            "range": [22.1, 44.2],
+            "quality": "Legendary"
+          },
+          "yu": {
+            "name": "对首领增伤",
+            "type": "damage_bonus_boss",
+            "value": 0.038,
+            "range": [0.019, 0.038],
+            "quality": "Legendary"
+          },
+          "dingyin": {
+            "name": "技能增效",
+            "type": "damage_bonus_specific_martial",
+            "value": 0.07,
+            "range": [0.035, 0.07],
+            "quality": "Legendary"
+          }
+        },
+        "Wrist": {
+          "slot": "Wrist",
+          "gong": [
+            {
+              "name": "会心率",
+              "type": "crit_rate",
+              "value": 0.104,
+              "range": [0.052, 0.104],
+              "quality": "Legendary"
+            }
+          ],
+          "shang": {
+            "name": "会心率",
+            "type": "crit_rate",
+            "value": 0.104,
+            "range": [0.052, 0.104],
+            "quality": "Legendary"
+          },
+          "jue": {
+            "name": "最大外功",
+            "type": "max_attack",
+            "value": 90.6,
+            "range": [45.3, 90.6],
+            "quality": "Legendary"
+          },
+          "zhi": {
+            "name": "最大裂石攻击",
+            "type": "max_lieshi_damage",
+            "value": 44.2,
+            "range": [22.1, 44.2],
+            "quality": "Legendary"
+          },
+          "yu": {
+            "name": "对首领增伤",
+            "type": "damage_bonus_boss",
+            "value": 0.038,
+            "range": [0.019, 0.038],
+            "quality": "Legendary"
+          },
+          "dingyin": {
+            "name": "技能增效",
+            "type": "damage_bonus_specific_martial",
+            "value": 0.07,
+            "range": [0.035, 0.07],
+            "quality": "Legendary"
+          }
+        }
+      }
+    }
+  }
+}

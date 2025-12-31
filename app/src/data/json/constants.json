@@ -1,0 +1,146 @@
+{
+    "version": "1.0.0",
+    "description": "游戏常量配置",
+    "levelCaps": {
+        "maxWorldLevel": 100,
+        "maxCharacterLevel": 100
+    },
+    "resistanceTable": [
+        {
+            "minLevel": 81,
+            "maxLevel": 85,
+            "resistance": 0.15,
+            "title": "十二级·无为"
+        },
+        {
+            "minLevel": 86,
+            "maxLevel": 90,
+            "resistance": 0.30,
+            "title": "十三级·普观"
+        },
+        {
+            "minLevel": 91,
+            "maxLevel": 95,
+            "resistance": 0.45,
+            "title": "十四/十五级"
+        },
+        {
+            "minLevel": 96,
+            "maxLevel": 100,
+            "resistance": 0.65,
+            "title": "十六/十七级"
+        },
+        {
+            "minLevel": 101,
+            "maxLevel": 999,
+            "resistance": 0.85,
+            "title": "十八/十九级 (当前满级)"
+        }
+    ],
+    "maxLevelResistance": 0.85,
+    "damageMultipliers": {
+        "intent": 1.35,
+        "crit": 1.50,
+        "normal": 1.0,
+        "glancing": 0.5
+    },
+    "caps": {
+        "effectiveCritRate": 0.80,
+        "effectiveIntentRate": 0.40,
+        "basePrecision": 0.65
+    },
+    "attributeConversion": {
+        "constitution": {
+            "hp": 60
+        },
+        "defense_stat": {
+            "hp": 17,
+            "defense": 0.5
+        },
+        "agility": {
+            "min_attack": 0.9,
+            "crit_rate": 0.00076
+        },
+        "technique": {
+            "max_attack": 0.9,
+            "intent_rate": 0.00038
+        },
+        "strength": {
+            "min_attack": 0.225,
+            "max_attack": 1.36
+        }
+    },
+    "equipmentSlots": {
+        "total": 8,
+        "affixSlotsPerEquipment": 6,
+        "list": [
+            "MainWeapon",
+            "SubWeapon",
+            "Ring",
+            "Pendant",
+            "Head",
+            "Chest",
+            "Legs",
+            "Wrist"
+        ]
+    },
+    "affixSlotNames": {
+        "Gong": "宫",
+        "Shang": "商",
+        "Jue": "角",
+        "Zhi": "徵",
+        "Yu": "羽",
+        "DingYin": "定音"
+    },
+    "combat": {
+        "standardBoss": {
+            "level": 100,
+            "defense": 2000,
+            "resistance": 0.85,
+            "isBoss": true
+        },
+        "referenceSkill": {
+            "name": "标准参考技能",
+            "hits": 1,
+            "multiplierPerHit": [
+                1.0
+            ],
+            "type": "Martial"
+        }
+    },
+    "evaluation": {
+        "thresholds": {
+            "resetEfficiency": 0.85,
+            "minGain": 0.001,
+            "nearCap": 0.95,
+            "mediumCap": 0.70
+        },
+        "goldAffixValues": {
+            "critRate": 0.0104,
+            "intentRate": 0.0052,
+            "maxAttack": 90.6
+        },
+        "warningThresholds": {
+            "highAttackLowBonus": {
+                "attackThreshold": 3000,
+                "bonusThreshold": 0.30
+            },
+            "intentVsCritDamage": {
+                "totalRateThreshold": 1.0,
+                "damageRatio": 0.9
+            },
+            "precisionRange": {
+                "min": 0.90,
+                "max": 1.0
+            }
+        },
+        "efficiencyDefaults": {
+            "base": 0.8
+        }
+    },
+    "optimization": {
+        "resetThreshold": 0.15,
+        "minGainThreshold": 0.001,
+        "maxSuggestions": 10
+    }
+}

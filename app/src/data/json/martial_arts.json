@@ -1,0 +1,371 @@
+{
+    "version": "1.0.0",
+    "description": "心法/武学数据 - 基于 docs/心法系统.md",
+    "schools": {
+        "LieShi_Jun": {
+            "name": "裂石·钧",
+            "techniques": [
+                {
+                    "name": "霜天白夜",
+                    "bonuses": {
+                        "min_attack": 84,
+                        "direct_crit_rate": 0.046
+                    }
+                },
+                {
+                    "name": "穿喉诀",
+                    "bonuses": {
+                        "min_lieshi_damage": 14.3,
+                        "max_lieshi_damage": 28.5
+                    }
+                },
+                {
+                    "name": "孤忠不辞",
+                    "bonuses": {
+                        "crit_rate": 0.087,
+                        "crit_damage_bonus": 0.04
+                    }
+                },
+                {
+                    "name": "燎原踏",
+                    "bonuses": {
+                        "min_attack": 25.2,
+                        "max_attack": 50.4
+                    }
+                }
+            ]
+        },
+        "LieShi_Wei": {
+            "name": "裂石·威",
+            "techniques": [
+                {
+                    "name": "山河绝韵",
+                    "bonuses": {}
+                },
+                {
+                    "name": "困兽心经",
+                    "bonuses": {}
+                },
+                {
+                    "name": "抗造大法",
+                    "bonuses": {}
+                },
+                {
+                    "name": "磐石诀",
+                    "bonuses": {}
+                }
+            ]
+        },
+        "QianSi_Lin": {
+            "name": "牵丝·霖",
+            "techniques": [
+                {
+                    "name": "君臣药",
+                    "bonuses": {
+                        "crit_rate": 0.097,
+                        "direct_crit_rate": 0.046
+                    }
+                },
+                {
+                    "name": "杏花不见",
+                    "bonuses": {
+                        "min_qiansi_damage": 42.9,
+                        "healing_bonus_crit": 0.04
+                    }
+                },
+                {
+                    "name": "指玄篇注",
+                    "bonuses": {
+                        "crit_rate": 0.087,
+                        "healing_bonus_crit": 0.04
+                    }
+                },
+                {
+                    "name": "千丝蛊",
+                    "bonuses": {}
+                }
+            ]
+        },
+        "QianSi_Yu": {
+            "name": "牵丝·玉",
+            "techniques": [
+                {
+                    "name": "花上月令",
+                    "bonuses": {}
+                },
+                {
+                    "name": "葫芦飞飞",
+                    "bonuses": {}
+                },
+                {
+                    "name": "春雷篇",
+                    "bonuses": {}
+                },
+                {
+                    "name": "纵地摘星",
+                    "bonuses": {}
+                }
+            ]
+        },
+        "MingJin_Hong": {
+            "name": "鸣金·虹",
+            "techniques": [
+                {
+                    "name": "无名心法",
+                    "bonuses": {}
+                },
+                {
+                    "name": "千山法",
+                    "bonuses": {}
+                },
+                {
+                    "name": "燎原星火",
+                    "bonuses": {}
+                },
+                {
+                    "name": "威猛歌",
+                    "bonuses": {}
+                }
+            ]
+        },
+        "MingJin_Ying": {
+            "name": "鸣金·影",
+            "techniques": [
+                {
+                    "name": "剑气纵横",
+                    "bonuses": {}
+                },
+                {
+                    "name": "逐狼心经",
+                    "bonuses": {}
+                },
+                {
+                    "name": "移经易武",
+                    "bonuses": {}
+                },
+                {
+                    "name": "凝神章",
+                    "bonuses": {}
+                }
+            ]
+        },
+        "PoZhu_Feng": {
+            "name": "破竹·风",
+            "techniques": [
+                {
+                    "name": "忘川绝响",
+                    "bonuses": {}
+                },
+                {
+                    "name": "断石之构",
+                    "bonuses": {
+                        "precision_rate": 0.078,
+                        "direct_crit_rate": 0.041
+                    }
+                },
+                {
+                    "name": "心弥泥鱼",
+                    "bonuses": {}
+                },
+                {
+                    "name": "沧浪剑诀",
+                    "bonuses": {}
+                }
+            ]
+        },
+        "PoZhu_Chen": {
+            "name": "破竹·尘",
+            "techniques": [
+                {
+                    "name": "千营一呼",
+                    "bonuses": {}
+                },
+                {
+                    "name": "绳舟行木",
+                    "bonuses": {}
+                },
+                {
+                    "name": "灯儿亮",
+                    "bonuses": {}
+                },
+                {
+                    "name": "大唐歌",
+                    "bonuses": {}
+                }
+            ]
+        },
+        "PoZhu_Yuan": {
+            "name": "破竹·鸢",
+            "techniques": [
+                {
+                    "name": "扶摇直上",
+                    "bonuses": {}
+                },
+                {
+                    "name": "擒天势",
+                    "bonuses": {}
+                },
+                {
+                    "name": "三穷致知",
+                    "bonuses": {}
+                },
+                {
+                    "name": "天行健",
+                    "bonuses": {}
+                }
+            ]
+        }
+    },
+    "universal": {
+        "name": "通用心法",
+        "techniques": [
+            {
+                "name": "易水歌",
+                "bonuses": {
+                    "min_attack": 28.0,
+                    "max_attack": 56.0,
+                    "direct_crit_rate": 0.046
+                }
+            },
+            {
+                "name": "征人归",
+                "bonuses": {
+                    "min_attack": 75.6,
+                    "defense_penetration": 5.1
+                }
+            },
+            {
+                "name": "四时无常",
+                "bonuses": {}
+            },
+            {
+                "name": "归燕经",
+                "bonuses": {
+                    "hp": 2872,
+                    "damage_reduction_outer": 0.025
+                }
+            },
+            {
+                "name": "怒斩马",
+                "bonuses": {
+                    "defense": 37.8,
+                    "resistance_outer": 5.2
+                }
+            },
+            {
+                "name": "婆娑影",
+                "bonuses": {
+                    "precision_rate": 0.078,
+                    "damage_reduction_outer": 0.025
+                }
+            },
+            {
+                "name": "明晦同尘",
+                "bonuses": {
+                    "min_attack": 25.2,
+                    "max_attack": 50.4,
+                    "defense_penetration": 5.1
+                }
+            },
+            {
+                "name": "丹心篆",
+                "bonuses": {
+                    "hp": 2872,
+                    "damage_reduction_outer": 0.025
+                }
+            },
+            {
+                "name": "所恨年年",
+                "bonuses": {}
+            },
+            {
+                "name": "长生无相",
+                "bonuses": {}
+            },
+            {
+                "name": "极乐泣血",
+                "bonuses": {
+                    "max_attack": 67.2,
+                    "crit_damage_bonus": 0.035
+                }
+            },
+            {
+                "name": "生龙活虎",
+                "bonuses": {}
+            },
+            {
+                "name": "晚雪间",
+                "bonuses": {
+                    "hp": 2553,
+                    "resistance_outer": 4.5
+                }
+            },
+            {
+                "name": "铁身诀",
+                "bonuses": {}
+            },
+            {
+                "name": "山月无影",
+                "bonuses": {}
+            },
+            {
+                "name": "沙摆尾",
+                "bonuses": {}
+            }
+        ]
+    },
+    "buffs": {
+        "易水歌0": {
+            "type": "damage_bonus_general",
+            "value": 0.05
+        },
+        "易水1": {
+            "type": "defense_penetration",
+            "value": 10
+        },
+        "易水歌5": {
+            "type": "direct_crit_rate",
+            "value": 0.046
+        },
+        "断石外穿": {
+            "type": "defense_penetration",
+            "value": 25
+        },
+        "断石会伤": {
+            "type": "crit_damage_bonus",
+            "value": 0.25
+        },
+        "飞隼4": {
+            "type": "attack_percent",
+            "value": 0.10
+        },
+        "征人归": {
+            "type": "damage_bonus_general",
+            "value": 0.08
+        },
+        "明晦": {
+            "type": "damage_bonus_general",
+            "value": 0.078
+        },
+        "赛季天赋": {
+            "type": "damage_bonus_general",
+            "value": 0.15
+        },
+        "天工毒": {
+            "type": "damage_bonus_general",
+            "value": 0.009
+        },
+        "天工火": {
+            "type": "damage_bonus_general",
+            "value": 0.015
+        },
+        "气竭": {
+            "type": "damage_bonus_general",
+            "value": 0.10
+        },
+        "鼠鼠Q": {
+            "type": "damage_bonus_independent",
+            "value": 0.50
+        }
+    }
+}

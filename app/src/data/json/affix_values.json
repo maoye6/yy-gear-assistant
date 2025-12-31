@@ -1,0 +1,472 @@
+{
+    "version": "1.0.0",
+    "description": "装备词条数值定义 - 基于 docs/装备系统.md",
+    "affixes": {
+        "max_attack": {
+            "name": "最大外功",
+            "category": "attack",
+            "ranges": {
+                "initial_weapon": {
+                    "min": 45.3,
+                    "max": 90.6
+                },
+                "initial_accessory": {
+                    "min": 45.3,
+                    "max": 90.6
+                },
+                "tuning": {
+                    "min": 45.3,
+                    "max": 90.6
+                }
+            }
+        },
+        "min_attack": {
+            "name": "最小外功",
+            "category": "attack",
+            "ranges": {
+                "initial_weapon": {
+                    "min": 45.3,
+                    "max": 90.6
+                },
+                "initial_accessory": {
+                    "min": 45.3,
+                    "max": 90.6
+                },
+                "tuning": {
+                    "min": 45.3,
+                    "max": 90.6
+                }
+            }
+        },
+        "max_wuxiang_damage": {
+            "name": "最大无相攻击",
+            "category": "elemental",
+            "ranges": {
+                "initial_weapon": {
+                    "min": 25,
+                    "max": 50
+                },
+                "tuning": {
+                    "min": 25.7,
+                    "max": 51.4
+                }
+            }
+        },
+        "min_wuxiang_damage": {
+            "name": "最小无相攻击",
+            "category": "elemental",
+            "ranges": {
+                "initial_weapon": {
+                    "min": 25,
+                    "max": 50
+                },
+                "tuning": {
+                    "min": 25.7,
+                    "max": 51.4
+                }
+            }
+        },
+        "max_mingjin_damage": {
+            "name": "最大鸣金攻击",
+            "category": "elemental",
+            "ranges": {
+                "tuning": {
+                    "min": 22.1,
+                    "max": 44.2
+                }
+            }
+        },
+        "min_mingjin_damage": {
+            "name": "最小鸣金攻击",
+            "category": "elemental",
+            "ranges": {
+                "tuning": {
+                    "min": 22.1,
+                    "max": 44.2
+                }
+            }
+        },
+        "max_lieshi_damage": {
+            "name": "最大裂石攻击",
+            "category": "elemental",
+            "ranges": {
+                "tuning": {
+                    "min": 22.1,
+                    "max": 44.2
+                }
+            }
+        },
+        "min_lieshi_damage": {
+            "name": "最小裂石攻击",
+            "category": "elemental",
+            "ranges": {
+                "tuning": {
+                    "min": 22.1,
+                    "max": 44.2
+                }
+            }
+        },
+        "max_qiansi_damage": {
+            "name": "最大牵丝攻击",
+            "category": "elemental",
+            "ranges": {
+                "tuning": {
+                    "min": 22.1,
+                    "max": 44.2
+                }
+            }
+        },
+        "min_qiansi_damage": {
+            "name": "最小牵丝攻击",
+            "category": "elemental",
+            "ranges": {
+                "tuning": {
+                    "min": 22.1,
+                    "max": 44.2
+                }
+            }
+        },
+        "max_pozhu_damage": {
+            "name": "最大破竹攻击",
+            "category": "elemental",
+            "ranges": {
+                "tuning": {
+                    "min": 22.1,
+                    "max": 44.2
+                }
+            }
+        },
+        "min_pozhu_damage": {
+            "name": "最小破竹攻击",
+            "category": "elemental",
+            "ranges": {
+                "tuning": {
+                    "min": 22.1,
+                    "max": 44.2
+                }
+            }
+        },
+        "crit_rate": {
+            "name": "会心率",
+            "category": "judgment",
+            "isPercent": true,
+            "ranges": {
+                "initial_weapon": {
+                    "min": 0.052,
+                    "max": 0.104
+                },
+                "initial_accessory": {
+                    "min": 0.052,
+                    "max": 0.104
+                },
+                "initial_armor": {
+                    "min": 0.052,
+                    "max": 0.104
+                },
+                "tuning": {
+                    "min": 0.052,
+                    "max": 0.104
+                }
+            }
+        },
+        "intent_rate": {
+            "name": "会意率",
+            "category": "judgment",
+            "isPercent": true,
+            "ranges": {
+                "initial_weapon": {
+                    "min": 0.026,
+                    "max": 0.052
+                },
+                "initial_accessory": {
+                    "min": 0.026,
+                    "max": 0.052
+                },
+                "initial_armor": {
+                    "min": 0.026,
+                    "max": 0.052
+                },
+                "tuning": {
+                    "min": 0.026,
+                    "max": 0.052
+                }
+            }
+        },
+        "precision_rate": {
+            "name": "精准率",
+            "category": "judgment",
+            "isPercent": true,
+            "ranges": {
+                "initial_weapon": {
+                    "min": 0.052,
+                    "max": 0.104
+                },
+                "initial_accessory": {
+                    "min": 0.052,
+                    "max": 0.104
+                },
+                "initial_armor": {
+                    "min": 0.052,
+                    "max": 0.104
+                },
+                "tuning": {
+                    "min": 0.052,
+                    "max": 0.104
+                }
+            }
+        },
+        "agility": {
+            "name": "敏",
+            "category": "attribute",
+            "conversion": {
+                "min_attack": 0.9,
+                "crit_rate": 0.00076
+            },
+            "ranges": {
+                "initial_weapon": {
+                    "min": 28.7,
+                    "max": 57.4
+                },
+                "tuning": {
+                    "min": 28.7,
+                    "max": 57.4
+                }
+            }
+        },
+        "technique": {
+            "name": "势",
+            "category": "attribute",
+            "conversion": {
+                "max_attack": 0.9,
+                "intent_rate": 0.00038
+            },
+            "ranges": {
+                "initial_weapon": {
+                    "min": 28.7,
+                    "max": 57.4
+                },
+                "tuning": {
+                    "min": 28.7,
+                    "max": 57.4
+                }
+            }
+        },
+        "strength": {
+            "name": "劲",
+            "category": "attribute",
+            "conversion": {
+                "min_attack": 0.225,
+                "max_attack": 1.36
+            },
+            "ranges": {
+                "initial_armor": {
+                    "min": 28.7,
+                    "max": 57.4
+                },
+                "initial_armor_bottom": {
+                    "min": 28.7,
+                    "max": 57.4
+                },
+                "tuning": {
+                    "min": 28.7,
+                    "max": 57.4
+                }
+            }
+        },
+        "constitution": {
+            "name": "体",
+            "category": "attribute",
+            "conversion": {
+                "hp": 60
+            },
+            "ranges": {
+                "initial_armor": {
+                    "min": 28.7,
+                    "max": 57.4
+                },
+                "initial_armor_bottom": {
+                    "min": 28.7,
+                    "max": 57.4
+                },
+                "tuning": {
+                    "min": 28.7,
+                    "max": 57.4
+                }
+            }
+        },
+        "defense_stat": {
+            "name": "御",
+            "category": "attribute",
+            "conversion": {
+                "hp": 17,
+                "defense": 0.5
+            },
+            "ranges": {
+                "initial_armor": {
+                    "min": 28.7,
+                    "max": 57.4
+                },
+                "initial_armor_bottom": {
+                    "min": 28.7,
+                    "max": 57.4
+                },
+                "tuning": {
+                    "min": 28.7,
+                    "max": 57.4
+                }
+            }
+        },
+        "hp": {
+            "name": "气血最大值",
+            "category": "survival",
+            "ranges": {
+                "initial_armor": {
+                    "min": 1722,
+                    "max": 3444
+                },
+                "tuning": {
+                    "min": 1722,
+                    "max": 3444
+                },
+                "tuning_pozhu": {
+                    "min": 1722,
+                    "max": 3444
+                }
+            }
+        },
+        "defense": {
+            "name": "外功防御",
+            "category": "survival",
+            "ranges": {
+                "initial_armor": {
+                    "min": 22.7,
+                    "max": 45.4
+                },
+                "tuning": {
+                    "min": 22.7,
+                    "max": 45.4
+                },
+                "tuning_pozhu": {
+                    "min": 22.7,
+                    "max": 45.4
+                }
+            }
+        },
+        "defense_penetration": {
+            "name": "外功穿透",
+            "category": "penetration",
+            "ranges": {
+                "dingyin_general": {
+                    "min": 7.7,
+                    "max": 12.8
+                }
+            }
+        },
+        "elemental_penetration": {
+            "name": "无相穿透",
+            "category": "penetration",
+            "ranges": {
+                "dingyin_general": {
+                    "min": 9.1,
+                    "max": 15.2
+                }
+            }
+        },
+        "resistance_outer": {
+            "name": "外功抗性",
+            "category": "defense",
+            "ranges": {
+                "dingyin_general": {
+                    "min": 7.7,
+                    "max": 12.8
+                }
+            }
+        },
+        "damage_bonus_specific_martial": {
+            "name": "特定武学增效",
+            "category": "bonus",
+            "isPercent": true,
+            "ranges": {
+                "rare_weapon": {
+                    "min": 0.074,
+                    "max": 0.074
+                },
+                "dingyin_armor": {
+                    "min": 0.042,
+                    "max": 0.070
+                }
+            }
+        },
+        "damage_bonus_all_martial": {
+            "name": "全武学增效",
+            "category": "bonus",
+            "isPercent": true,
+            "ranges": {
+                "rare_accessory": {
+                    "min": 0.036,
+                    "max": 0.036
+                }
+            }
+        },
+        "damage_bonus_magic_single": {
+            "name": "单体类奇术增伤",
+            "category": "bonus",
+            "isPercent": true,
+            "ranges": {
+                "rare_armor_top": {
+                    "min": 0.114,
+                    "max": 0.114
+                },
+                "tuning": {
+                    "min": 0.114,
+                    "max": 0.114
+                }
+            }
+        },
+        "damage_bonus_magic_group": {
+            "name": "群体类奇术增伤",
+            "category": "bonus",
+            "isPercent": true,
+            "ranges": {
+                "rare_armor_top": {
+                    "min": 0.114,
+                    "max": 0.114
+                },
+                "tuning": {
+                    "min": 0.114,
+                    "max": 0.114
+                }
+            }
+        },
+        "damage_bonus_boss": {
+            "name": "对首领单位增伤",
+            "category": "bonus",
+            "isPercent": true,
+            "ranges": {
+                "rare_armor_bottom": {
+                    "min": 0.038,
+                    "max": 0.038
+                },
+                "tuning": {
+                    "min": 0.038,
+                    "max": 0.038
+                }
+            }
+        },
+        "damage_bonus_player": {
+            "name": "对玩家单位增伤",
+            "category": "bonus",
+            "isPercent": true,
+            "ranges": {
+                "rare_armor_bottom": {
+                    "min": 0.038,
+                    "max": 0.038
+                },
+                "tuning": {
+                    "min": 0.038,
+                    "max": 0.038
+                }
+            }
+        }
+    }
+}

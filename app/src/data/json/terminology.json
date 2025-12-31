@@ -1,0 +1,118 @@
+{
+    "version": "1.0.0",
+    "description": "燕云十六声属性术语表 - 变量名与中文名称对照",
+    "attributes": {
+        "基础五维": {
+            "constitution": "体",
+            "defense_stat": "御",
+            "agility": "敏",
+            "technique": "势",
+            "strength": "劲"
+        },
+        "生存属性": {
+            "hp": "气血最大值",
+            "defense": "外功防御"
+        },
+        "攻击属性": {
+            "attack": "外功攻击",
+            "min_attack": "最小外功攻击",
+            "max_attack": "最大外功攻击"
+        },
+        "判定属性": {
+            "precision_rate": "精准率",
+            "crit_rate": "会心率",
+            "intent_rate": "会意率",
+            "direct_crit_rate": "直接会心率",
+            "direct_intent_rate": "直接会意率",
+            "glance_convert_rate": "擦伤转化率"
+        },
+        "增伤效果": {
+            "crit_damage_bonus": "会心伤害加成",
+            "intent_damage_bonus": "会意伤害加成",
+            "defense_penetration": "外功穿透",
+            "outer_penetrate": "外功穿透",
+            "elemental_penetration": "属攻穿透",
+            "lieshi_penetrate": "裂石穿透",
+            "fixed_damage": "固伤"
+        },
+        "防御属性": {
+            "defense": "外功防御",
+            "outer_def": "外防"
+        },
+        "伤害加成": {
+            "damage_bonus_general": "通用增伤",
+            "damage_bonus_outer": "外功增伤",
+            "damage_bonus_elemental": "属攻增伤",
+            "damage_bonus_all_martial": "全部武学增效",
+            "damage_bonus_specific_martial": "指定武学增效",
+            "damage_bonus_boss": "对首领增伤",
+            "damage_bonus_magic_single": "单体奇术增伤",
+            "damage_bonus_magic_group": "群体奇术增伤",
+            "damage_bonus_player": "对玩家增伤",
+            "damage_bonus_independent": "独立增伤",
+            "damage_bonus_skill": "技能增伤"
+        },
+        "减伤效果": {
+            "resistance_outer": "外功抗性",
+            "damage_reduction_outer": "外功伤害减免",
+            "damage_reduction_elemental": "属攻伤害减免"
+        },
+        "治疗增伤": {
+            "healing_bonus_outer": "外功治疗加成",
+            "healing_bonus_elemental": "属攻治疗加成",
+            "healing_bonus_crit": "会心治疗加成"
+        },
+        "流派属性攻击": {
+            "mingjin_damage": "鸣金攻击",
+            "min_mingjin_damage": "最小鸣金攻击",
+            "max_mingjin_damage": "最大鸣金攻击",
+            "lieshi_damage": "裂石攻击",
+            "min_lieshi_damage": "最小裂石攻击",
+            "max_lieshi_damage": "最大裂石攻击",
+            "qiansi_damage": "牵丝攻击",
+            "min_qiansi_damage": "最小牵丝攻击",
+            "max_qiansi_damage": "最大牵丝攻击",
+            "pozhui_damage": "破竹攻击",
+            "min_pozhu_damage": "最小破竹攻击",
+            "max_pozhu_damage": "最大破竹攻击"
+        },
+        "无相攻击": {
+            "wuxiang_damage": "无相攻击",
+            "min_wuxiang_damage": "最小无相攻击",
+            "max_wuxiang_damage": "最大无相攻击"
+        }
+    },
+    "percent_attributes": [
+        "precision_rate",
+        "crit_rate",
+        "intent_rate",
+        "direct_crit_rate",
+        "direct_intent_rate",
+        "crit_damage_bonus",
+        "intent_damage_bonus",
+        "damage_reduction_outer",
+        "damage_reduction_elemental",
+        "healing_bonus_crit",
+        "damage_bonus_general",
+        "damage_bonus_outer",
+        "damage_bonus_elemental",
+        "damage_bonus_all_martial",
+        "damage_bonus_specific_martial",
+        "damage_bonus_boss",
+        "damage_bonus_magic_single",
+        "damage_bonus_magic_group",
+        "damage_bonus_player",
+        "damage_bonus_independent",
+        "healing_bonus_outer",
+        "healing_bonus_elemental",
+        "glance_convert_rate"
+    ],
+    "min_max_pairs": [
+        ["min_attack", "max_attack", "外功攻击"],
+        ["min_mingjin_damage", "max_mingjin_damage", "鸣金攻击"],
+        ["min_lieshi_damage", "max_lieshi_damage", "裂石攻击"],
+        ["min_qiansi_damage", "max_qiansi_damage", "牵丝攻击"],
+        ["min_pozhu_damage", "max_pozhu_damage", "破竹攻击"],
+        ["min_wuxiang_damage", "max_wuxiang_damage", "无相攻击"]
+    ]
+}

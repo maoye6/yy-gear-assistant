@@ -1,0 +1,557 @@
+{
+    "version": "1.1.0",
+    "description": "装备词条池配置 - 定义各部位/流派可用词条，区分调律和转律词条库",
+    "slots": {
+        "MainWeapon": {
+            "category": "weapon",
+            "name": "主武器"
+        },
+        "SubWeapon": {
+            "category": "weapon",
+            "name": "副武器"
+        },
+        "Ring": {
+            "category": "accessory",
+            "name": "环"
+        },
+        "Pendant": {
+            "category": "accessory",
+            "name": "佩"
+        },
+        "Head": {
+            "category": "armor_top",
+            "name": "头"
+        },
+        "Chest": {
+            "category": "armor_top",
+            "name": "胸"
+        },
+        "Legs": {
+            "category": "armor_bottom",
+            "name": "胫甲"
+        },
+        "Wrist": {
+            "category": "armor_bottom",
+            "name": "腕甲"
+        }
+    },
+    "schools": {
+        "MingJin": {
+            "name": "鸣金",
+            "subSchools": [
+                "Hong",
+                "Ying"
+            ],
+            "subNames": [
+                "虹",
+                "影"
+            ]
+        },
+        "LieShi": {
+            "name": "裂石",
+            "subSchools": [
+                "Wei",
+                "Jun"
+            ],
+            "subNames": [
+                "威",
+                "钧"
+            ]
+        },
+        "QianSi": {
+            "name": "牵丝",
+            "subSchools": [
+                "Yu",
+                "Lin"
+            ],
+            "subNames": [
+                "玉",
+                "霖"
+            ]
+        },
+        "PoZhu": {
+            "name": "破竹",
+            "subSchools": [
+                "Feng",
+                "Chen",
+                "Yuan"
+            ],
+            "subNames": [
+                "风",
+                "尘",
+                "鸢"
+            ]
+        }
+    },
+    "subSchools": {
+        "MingJin_Hong": {
+            "id": "MingJin_Hong",
+            "name": "鸣金·虹",
+            "parentSchool": "MingJin",
+            "description": "会意流派 - 剑/枪"
+        },
+        "MingJin_Ying": {
+            "id": "MingJin_Ying",
+            "name": "鸣金·影",
+            "parentSchool": "MingJin",
+            "description": "会意流派 - 剑/枪"
+        },
+        "LieShi_Wei": {
+            "id": "LieShi_Wei",
+            "name": "裂石·威",
+            "parentSchool": "LieShi",
+            "description": "会心流派 - 陌刀/枪"
+        },
+        "LieShi_Jun": {
+            "id": "LieShi_Jun",
+            "name": "裂石·钧",
+            "parentSchool": "LieShi",
+            "description": "会心流派 - 横刀/陌刀"
+        },
+        "QianSi_Yu": {
+            "id": "QianSi_Yu",
+            "name": "牵丝·玉",
+            "parentSchool": "QianSi",
+            "description": "会心流派 - 伞/扇"
+        },
+        "QianSi_Lin": {
+            "id": "QianSi_Lin",
+            "name": "牵丝·霖",
+            "parentSchool": "QianSi",
+            "description": "奶妈流派 - 伞/扇"
+        },
+        "PoZhu_Feng": {
+            "id": "PoZhu_Feng",
+            "name": "破竹·风",
+            "parentSchool": "PoZhu",
+            "description": "会心流派 - 双刀/绳镖"
+        },
+        "PoZhu_Chen": {
+            "id": "PoZhu_Chen",
+            "name": "破竹·尘",
+            "parentSchool": "PoZhu",
+            "description": "会心流派 - 伞/绳镖"
+        },
+        "PoZhu_Yuan": {
+            "id": "PoZhu_Yuan",
+            "name": "破竹·鸢",
+            "parentSchool": "PoZhu",
+            "description": "会心流派 - 拳甲/绳镖"
+        }
+    },
+    "initial": {
+        "weapon": [
+            "max_attack",
+            "min_attack",
+            "max_wuxiang_damage",
+            "min_wuxiang_damage",
+            "agility",
+            "technique"
+        ],
+        "accessory": [
+            "max_attack",
+            "min_attack"
+        ],
+        "armor_top": [
+            "crit_rate",
+            "intent_rate",
+            "precision_rate",
+            "hp",
+            "defense"
+        ],
+        "armor_bottom": [
+            "crit_rate",
+            "intent_rate",
+            "strength",
+            "precision_rate",
+            "constitution",
+            "defense_stat",
+            "hp",
+            "defense"
+        ]
+    },
+    "tiaolu": {
+        "description": "调律词条库 - 商/角/徵/羽槽使用，包含所有可能出现的词条",
+        "weapon": [
+            "max_attack",
+            "min_attack",
+            "max_wuxiang_damage",
+            "min_wuxiang_damage",
+            "min_mingjin_damage",
+            "max_mingjin_damage",
+            "min_lieshi_damage",
+            "max_lieshi_damage",
+            "min_qiansi_damage",
+            "max_qiansi_damage",
+            "min_pozhu_damage",
+            "max_pozhu_damage",
+            "crit_rate",
+            "intent_rate",
+            "precision_rate",
+            "agility",
+            "technique",
+            "strength",
+            "constitution",
+            "defense_stat",
+            "damage_bonus_specific_martial"
+        ],
+        "accessory": [
+            "max_attack",
+            "min_attack",
+            "max_wuxiang_damage",
+            "min_wuxiang_damage",
+            "min_mingjin_damage",
+            "max_mingjin_damage",
+            "min_lieshi_damage",
+            "max_lieshi_damage",
+            "min_qiansi_damage",
+            "max_qiansi_damage",
+            "min_pozhu_damage",
+            "max_pozhu_damage",
+            "crit_rate",
+            "intent_rate",
+            "precision_rate",
+            "agility",
+            "technique",
+            "strength",
+            "constitution",
+            "defense_stat",
+            "hp",
+            "defense",
+            "damage_bonus_all_martial"
+        ],
+        "armor_top": [
+            "max_attack",
+            "min_attack",
+            "max_wuxiang_damage",
+            "min_wuxiang_damage",
+            "min_mingjin_damage",
+            "max_mingjin_damage",
+            "min_lieshi_damage",
+            "max_lieshi_damage",
+            "min_qiansi_damage",
+            "max_qiansi_damage",
+            "min_pozhu_damage",
+            "max_pozhu_damage",
+            "crit_rate",
+            "intent_rate",
+            "precision_rate",
+            "agility",
+            "technique",
+            "strength",
+            "constitution",
+            "defense_stat",
+            "hp",
+            "defense",
+            "damage_bonus_magic_single",
+            "damage_bonus_magic_group"
+        ],
+        "armor_bottom": [
+            "max_attack",
+            "min_attack",
+            "max_wuxiang_damage",
+            "min_wuxiang_damage",
+            "min_mingjin_damage",
+            "max_mingjin_damage",
+            "min_lieshi_damage",
+            "max_lieshi_damage",
+            "min_qiansi_damage",
+            "max_qiansi_damage",
+            "min_pozhu_damage",
+            "max_pozhu_damage",
+            "crit_rate",
+            "intent_rate",
+            "precision_rate",
+            "agility",
+            "technique",
+            "strength",
+            "constitution",
+            "defense_stat",
+            "hp",
+            "defense",
+            "damage_bonus_boss",
+            "damage_bonus_player"
+        ]
+    },
+    "zhunlv": {
+        "description": "转律词条库 - 转律时使用，区分流派，针对性更强（用于用户建议功能）",
+        "MingJin": {
+            "weapon": [
+                "max_attack",
+                "max_wuxiang_damage",
+                "crit_rate",
+                "intent_rate",
+                "technique",
+                "strength"
+            ],
+            "accessory": [
+                "max_attack",
+                "max_mingjin_damage",
+                "crit_rate",
+                "intent_rate",
+                "technique",
+                "strength"
+            ],
+            "armor": [
+                "max_attack",
+                "max_mingjin_damage",
+                "crit_rate",
+                "intent_rate",
+                "technique",
+                "strength"
+            ]
+        },
+        "LieShi": {
+            "weapon": [
+                "max_attack",
+                "min_attack",
+                "max_wuxiang_damage",
+                "min_wuxiang_damage",
+                "crit_rate",
+                "agility",
+                "strength"
+            ],
+            "accessory": [
+                "max_attack",
+                "min_attack",
+                "max_lieshi_damage",
+                "min_lieshi_damage",
+                "crit_rate",
+                "agility",
+                "strength"
+            ],
+            "armor": [
+                "max_attack",
+                "min_attack",
+                "max_lieshi_damage",
+                "min_lieshi_damage",
+                "crit_rate",
+                "agility",
+                "strength",
+                "max_wuxiang_damage",
+                "min_wuxiang_damage"
+            ]
+        },
+        "QianSi": {
+            "weapon": [
+                "max_attack",
+                "min_attack",
+                "max_wuxiang_damage",
+                "min_wuxiang_damage",
+                "crit_rate",
+                "agility",
+                "strength"
+            ],
+            "accessory": [
+                "max_attack",
+                "min_attack",
+                "max_qiansi_damage",
+                "min_qiansi_damage",
+                "crit_rate",
+                "agility",
+                "strength"
+            ],
+            "armor": [
+                "max_attack",
+                "min_attack",
+                "max_qiansi_damage",
+                "min_qiansi_damage",
+                "crit_rate",
+                "agility",
+                "strength",
+                "max_wuxiang_damage",
+                "min_wuxiang_damage"
+            ]
+        },
+        "PoZhu": {
+            "weapon": [
+                "max_attack",
+                "min_attack",
+                "max_wuxiang_damage",
+                "min_wuxiang_damage",
+                "crit_rate",
+                "agility",
+                "strength"
+            ],
+            "accessory": [
+                "max_attack",
+                "min_attack",
+                "max_pozhu_damage",
+                "min_pozhu_damage",
+                "crit_rate",
+                "agility",
+                "strength"
+            ],
+            "armor": [
+                "max_attack",
+                "min_attack",
+                "max_pozhu_damage",
+                "min_pozhu_damage",
+                "crit_rate",
+                "agility",
+                "strength",
+                "max_wuxiang_damage",
+                "min_wuxiang_damage"
+            ],
+            "armor_feng": [
+                "hp",
+                "defense",
+                "constitution",
+                "defense_stat"
+            ]
+        }
+    },
+    "rare": {
+        "_comment": "稀有词条已合并到调律词条库中，此字段保留用于文档说明",
+        "weapon": [
+            {
+                "type": "damage_bonus_specific_martial",
+                "name": "特定武学增效",
+                "value": 0.074
+            }
+        ],
+        "accessory": [
+            {
+                "type": "damage_bonus_all_martial",
+                "name": "全武学增效",
+                "value": 0.036
+            }
+        ],
+        "armor_top": [
+            {
+                "type": "damage_bonus_magic_single",
+                "name": "单体奇术增伤",
+                "value": 0.114
+            },
+            {
+                "type": "damage_bonus_magic_group",
+                "name": "群体奇术增伤",
+                "value": 0.114
+            }
+        ],
+        "armor_bottom": [
+            {
+                "type": "damage_bonus_boss",
+                "name": "首领增伤",
+                "value": 0.038
+            },
+            {
+                "type": "damage_bonus_player",
+                "name": "玩家增伤",
+                "value": 0.038
+            }
+        ]
+    },
+    "dingyin": {
+        "general": [
+            {
+                "type": "elemental_penetration",
+                "name": "无相穿透",
+                "min": 9.1,
+                "max": 15.2
+            },
+            {
+                "type": "defense_penetration",
+                "name": "外功穿透",
+                "min": 7.7,
+                "max": 12.8
+            },
+            {
+                "type": "resistance_outer",
+                "name": "外功抗性",
+                "min": 7.7,
+                "max": 12.8
+            }
+        ],
+        "armor": {
+            "description": "各流派技能增效",
+            "min": 0.042,
+            "max": 0.070,
+            "skills": {
+                "MingJin_Hong": [
+                    "九剑",
+                    "无名剑"
+                ],
+                "MingJin_Ying": [
+                    "九剑",
+                    "无名剑",
+                    "无名枪"
+                ],
+                "LieShi_Wei": [
+                    "八枪",
+                    "陌刀"
+                ],
+                "LieShi_Jun": [
+                    "八枪",
+                    "陌刀",
+                    "横刀"
+                ],
+                "QianSi_Yu": [
+                    "九伞",
+                    "青扇"
+                ],
+                "QianSi_Lin": [
+                    "奶伞",
+                    "奶扇"
+                ],
+                "PoZhu_Feng": [
+                    "双刀",
+                    "粟子"
+                ],
+                "PoZhu_Chen": [
+                    "双刀",
+                    "粟子",
+                    "绳子"
+                ],
+                "PoZhu_Yuan": [
+                    "九伞",
+                    "青扇"
+                ]
+            }
+        }
+    },
+    "conflictRules": {
+        "description": "商/角/徵/羽槽位的防重复规则",
+        "_comment": "同一件装备的商/角/徵/羽槽位不能选择相同类型的词条（除非在允许列表中）",
+        "strict": true,
+        "allowedDuplicates": {
+            "_comment": "某些词条类型可以重复（如最大外功和最小外功算不同类型，或属性攻击的上限和下限）",
+            "max_attack": [
+                "min_attack"
+            ],
+            "min_attack": [
+                "max_attack"
+            ],
+            "max_mingjin_damage": [
+                "min_mingjin_damage"
+            ],
+            "min_mingjin_damage": [
+                "max_mingjin_damage"
+            ],
+            "max_lieshi_damage": [
+                "min_lieshi_damage"
+            ],
+            "min_lieshi_damage": [
+                "max_lieshi_damage"
+            ],
+            "max_qiansi_damage": [
+                "min_qiansi_damage"
+            ],
+            "min_qiansi_damage": [
+                "max_qiansi_damage"
+            ],
+            "max_pozhu_damage": [
+                "min_pozhu_damage"
+            ],
+            "min_pozhu_damage": [
+                "max_pozhu_damage"
+            ],
+            "max_wuxiang_damage": [
+                "min_wuxiang_damage"
+            ],
+            "min_wuxiang_damage": [
+                "max_wuxiang_damage"
+            ]
+        }
+    }
+}

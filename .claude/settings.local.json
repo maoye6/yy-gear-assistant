@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(Set-Location \"d:\\\\Code\\\\yy\\\\app\")",
+      "Bash(pushd:*)",
+      "Bash(popd:*)",
+      "Bash(Select-Object -First 50)",
+      "Bash(Select-Object -First 100)",
+      "Bash(Get-Location)"
+    ]
+  }
+}
