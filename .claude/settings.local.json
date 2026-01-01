@@ -12,7 +12,14 @@
       "Bash(Get-Location)",
       "Bash(npm run deploy:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(ls:*)",
+      "Bash(powershell:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(dir:*)",
+      "Bash(Select-String:*)"
     ]
   }
 }
