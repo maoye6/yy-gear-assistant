@@ -1,0 +1,230 @@
+/**
+ * OptimalBuildDisplay.module.css - 理论最优方案展示样式
+ */
+
+/* ===== 主容器 ===== */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.panelTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.emptyState {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+}
+
+/* ===== 头部 ===== */
+.header {
+  cursor: pointer;
+  margin-bottom: 12px;
+  user-select: none;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.expandIcon {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  transition: transform 0.2s ease;
+}
+
+.subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+/* ===== 伤害对比 ===== */
+.damageCompact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, rgba(240, 242, 246, 0.8), rgba(232, 236, 241, 0.8));
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  font-size: var(--font-size-sm);
+}
+
+.damageItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.damageLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.damageNum {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.damageNum--gold {
+  color: #FFD700;
+}
+
+.vs {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-tertiary);
+}
+
+.gapBadge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.gapBadge--large {
+  background: rgba(255, 59, 48, 0.15);
+  color: #FF3B30;
+}
+
+.gapBadge--small {
+  background: rgba(52, 199, 89, 0.15);
+  color: #34C759;
+}
+
+/* ===== 概览区域 ===== */
+.summarySection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.statsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.statItem {
+  display: flex;
+  gap: 4px;
+  padding: 4px 8px;
+  background: rgba(0, 113, 227, 0.08);
+  border-radius: 6px;
+  font-size: var(--font-size-xs);
+}
+
+.statLabel {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.statCount {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.clickHint {
+  margin-top: auto;
+  padding-top: 10px;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+/* ===== 详情区域 ===== */
+.detailsSection {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+.detailsTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 10px;
+}
+
+/* ===== 槽位卡片 ===== */
+.slotCard {
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+}
+
+.slotName {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.affixList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ===== 词条项 ===== */
+.affixItem {
+  display: flex;
+  gap: 4px;
+  font-size: var(--font-size-xs);
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  border: 1px solid rgba(0, 113, 227, 0.15);
+}
+
+.affixLabel {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  min-width: 24px;
+}
+
+.affixName {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.affixValue {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}

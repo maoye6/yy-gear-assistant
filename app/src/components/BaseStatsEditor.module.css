@@ -1,0 +1,110 @@
+/**
+ * BaseStatsEditor.module.css - 基础属性编辑器样式
+ */
+
+/* ===== 重置按钮 ===== */
+.resetButton {
+  font-size: var(--font-size-sm);
+  color: #ef4444;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 4px;
+  padding: 0;
+}
+
+.resetButton:hover {
+  color: #dc2626;
+}
+
+/* ===== 统计编辑网格 ===== */
+.statsEditorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* 响应式：平板改为双列 */
+@media (max-width: 1199px) {
+  .statsEditorGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 响应式：手机改为单列 */
+@media (max-width: 767px) {
+  .statsEditorGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ===== 分组标题 ===== */
+.groupTitle {
+  margin: 0 0 12px 0;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.groupTitle--withMargin {
+  margin-top: 20px;
+}
+
+/* ===== 表单行 ===== */
+.formRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.formLabel {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.formLabel--small {
+  font-size: var(--font-size-xs);
+}
+
+/* ===== 输入框 ===== */
+.input {
+  width: 80px;
+  padding: 6px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-sm);
+  text-align: right;
+  font-size: var(--font-size-sm);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.1);
+}
+
+.input--compact {
+  width: 70px;
+  padding: 6px 8px;
+  font-size: var(--font-size-xs);
+}
+
+/* ===== 底部说明 ===== */
+.footerNote {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}

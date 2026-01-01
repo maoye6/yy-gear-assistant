@@ -7,107 +7,71 @@ import { GraduationReportDisplay } from './components/GraduationReport';
 import { OptimizationSuggestions } from './components/OptimizationSuggestions';
 import { OptimalBuildDisplay } from './components/OptimalBuildDisplay';
 
-// --- Main App ---
-
 import './App.css';
-
-// 统一的卡片容器样式 - 使用百分比和弹性布局
-const cardContainerStyle: React.CSSProperties = {
-  background: 'rgba(255, 255, 255, 0.65)',
-  backdropFilter: 'blur(20px) saturate(180%)',
-  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-  borderRadius: 'clamp(12px, 2vw, 20px)',
-  padding: 'clamp(16px, 2vw, 24px)',
-  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.02), 0 8px 16px rgba(0, 0, 0, 0.04)',
-  border: '1px solid rgba(255, 255, 255, 0.7)',
-  minHeight: '250px',
-  maxHeight: '35vh',
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  overflow: 'hidden'
-};
 
 function App() {
   return (
     <AppProvider>
       <div className="app-container">
-        <header style={{ textAlign: 'center', marginBottom: 'clamp(12px, 2vw, 20px)' }}>
-          <h1 style={{ fontWeight: 'bold', margin: 0 }}>燕云十六声 培养助手</h1>
+        {/* Header Area */}
+        <header className="app-header">
+          <h1>燕云十六声 培养助手</h1>
           <p className="subtitle">Equipment Simulator & Damage Calculator</p>
         </header>
 
-        <main className="main-layout">
-          {/* Left Sidebar (Stats) */}
-          <aside className="stats-sidebar">
-            <StatsDisplay />
-          </aside>
+        {/* Stats Sidebar */}
+        <aside className="stats-sidebar">
+          <StatsDisplay />
+        </aside>
 
-          <section className="content-area">
-            {/* Row 1: 流派心法 + 装备配置 */}
-            <div className="row-1">
-              {/* 左侧列：流派心法 */}
-              <div className="card" style={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: '400px',
-                overflow: 'hidden'
-              }}>
-                <BuildSelector />
-              </div>
+        {/* Main Content Area with Grid Areas */}
+        <section className="content-area">
+          {/* Area: School/Build Selector */}
+          <div className="area-school">
+            <BuildSelector />
+          </div>
 
-              {/* 右侧列：装备配置 */}
-              <div className="card" style={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: '400px'
-              }}>
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginBottom: '12px',
-                  flexWrap: 'wrap',
-                  gap: '8px'
-                }}>
-                  <h2 style={{ margin: 0 }}>装备配置</h2>
-                  <div style={{ fontSize: 'clamp(0.7em, 1.5vw, 0.85em)', color: '#888' }}>
-                    点击卡片添加/编辑装备
-                  </div>
-                </div>
-
-                {/* 装备网格容器 */}
-                <div style={{
-                  flex: 1,
-                  overflowY: 'auto',
-                  overflowX: 'hidden',
-                  minHeight: 0,
-                  padding: '2px'
-                }}>
-                  <EquipmentGrid />
-                </div>
+          {/* Area: Equipment */}
+          <div className="area-equipment">
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginBottom: '12px',
+              flexWrap: 'wrap',
+              gap: '8px'
+            }}>
+              <h2 style={{ margin: 0 }}>装备配置</h2>
+              <div style={{ fontSize: 'clamp(0.7em, 1.5vw, 0.85em)', color: '#888' }}>
+                点击卡片添加/编辑装备
               </div>
             </div>
-
-            {/* Row 2: 装备评分 + 优化建议 + 理论最优 */}
-            <div className="row-2">
-              {/* 装备评分模块 */}
-              <div style={cardContainerStyle}>
-                <GraduationReportWrapper />
-              </div>
-
-              {/* 优化建议模块 */}
-              <div style={cardContainerStyle}>
-                <OptimizationSuggestionsWrapper />
-              </div>
-
-              {/* 理论最优方案 */}
-              <div style={cardContainerStyle}>
-                <OptimalBuildWrapper />
-              </div>
+            <div style={{
+              flex: 1,
+              overflowY: 'auto',
+              overflowX: 'hidden',
+              minHeight: 0,
+              padding: '2px'
+            }}>
+              <EquipmentGrid />
             </div>
-          </section>
-        </main>
+          </div>
+
+          {/* Area: Graduation Report */}
+          <div className="area-report">
+            <GraduationReportWrapper />
+          </div>
+
+          {/* Area: Optimization Suggestions */}
+          <div className="area-suggestion">
+            <OptimizationSuggestionsWrapper />
+          </div>
+
+          {/* Area: Optimal Build */}
+          <div className="area-optimal">
+            <OptimalBuildWrapper />
+          </div>
+        </section>
       </div>
     </AppProvider>
   );
@@ -325,4 +289,3 @@ const OptimalBuildWrapper: React.FC = () => {
 };
 
 export default App;
-

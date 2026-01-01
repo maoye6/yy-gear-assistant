@@ -1,0 +1,136 @@
+/**
+ * AffixInput.module.css - 词条输入组件样式
+ */
+
+/* ===== 词条容器 ===== */
+.affixContainer {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.affixContainer--conflicted {
+  border: 1px solid rgba(255, 149, 0, 0.5);
+  background: rgba(255, 149, 0, 0.05);
+}
+
+.affixContainer--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ===== 标题栏 ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.conflictBadge {
+  color: var(--color-warning);
+  margin-left: 6px;
+  font-weight: 500;
+  font-size: var(--font-size-xs);
+}
+
+.rangeDisplay {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* ===== 输入网格 ===== */
+.inputGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8px;
+}
+
+/* 移动端：输入框垂直排列 */
+@media (max-width: 480px) {
+  .inputGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .inputGrid input[type="number"] {
+    width: 100%;
+  }
+}
+
+/* ===== 选择框 ===== */
+.select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-width: 0;
+}
+
+.select:hover {
+  border-color: rgba(0, 113, 227, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.1);
+}
+
+.select:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* ===== 数值输入框 ===== */
+.valueInput {
+  width: 85px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  transition: all 0.15s ease;
+}
+
+.valueInput:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.valueInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.1);
+}
+
+.valueInput:disabled {
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* ===== 警告信息 ===== */
+.warningMessage {
+  color: var(--color-warning);
+  font-size: var(--font-size-xs);
+  margin-top: 4px;
+}

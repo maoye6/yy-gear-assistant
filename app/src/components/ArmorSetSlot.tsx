@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import type { ArmorSetType, ArmorSetSlot as SlotType } from '../types';
 import { ARMOR_SET_BONUSES } from '../types';
 import { useAppStore } from '../store/AppContext';
+import styles from './ArmorSetSlot.module.css';
 import './Modal.css';
 
 interface Props {
@@ -58,26 +59,13 @@ const ArmorSetModal: React.FC<ArmorSetModalProps> = ({
                     {/* 无套装选项 */}
                     <button
                         onClick={() => { onSelect(null); onClose(); }}
-                        style={{
-                            width: '100%',
-                            padding: '14px 16px',
-                            marginBottom: '12px',
-                            borderRadius: '12px',
-                            border: currentSet === null
-                                ? '2px solid #0071e3'
-                                : '1px solid rgba(0,0,0,0.08)',
-                            background: currentSet === null
-                                ? 'rgba(0,113,227,0.1)'
-                                : 'rgba(255,255,255,0.6)',
-                            cursor: 'pointer',
-                            textAlign: 'left',
-                            transition: 'all 0.2s ease'
-                        }}
+                        className={`${styles.setOption} ${currentSet === null ? styles['setOption--selected'] : ''}`}
                     >
-                        <div style={{ fontWeight: '600', color: '#1d1d1f' }}>
-                            无套装
+                        <div className={styles.setOptionHeader}>
+                            <span className={styles.setOptionName}>无套装</span>
+                            {currentSet === null && <span className={styles.selectedBadge}>已选择</span>}
                         </div>
-                        <div style={{ fontSize: '0.8em', color: '#6e6e73', marginTop: '4px' }}>
+                        <div className={styles.setOptionDesc}>
                             不使用任何套装效果
                         </div>
                     </button>
@@ -87,48 +75,13 @@ const ArmorSetModal: React.FC<ArmorSetModalProps> = ({
                         <button
                             key={type}
                             onClick={() => { onSelect(type); onClose(); }}
-                            style={{
-                                width: '100%',
-                                padding: '14px 16px',
-                                marginBottom: '12px',
-                                borderRadius: '12px',
-                                border: currentSet === type
-                                    ? '2px solid #0071e3'
-                                    : '1px solid rgba(0,0,0,0.08)',
-                                background: currentSet === type
-                                    ? 'rgba(0,113,227,0.1)'
-                                    : 'rgba(255,255,255,0.6)',
-                                cursor: 'pointer',
-                                textAlign: 'left',
-                                transition: 'all 0.2s ease'
-                            }}
+                            className={`${styles.setOption} ${currentSet === type ? styles['setOption--selected'] : ''}`}
                         >
-                            <div style={{
-                                display: 'flex',
-                                justifyContent: 'space-between',
-                                alignItems: 'center'
-                            }}>
-                                <span style={{ fontWeight: '600', color: '#1d1d1f' }}>
-                                    {info.name}
-                                </span>
-                                {currentSet === type && (
-                                    <span style={{
-                                        background: '#0071e3',
-                                        color: '#fff',
-                                        padding: '2px 8px',
-                                        borderRadius: '6px',
-                                        fontSize: '0.75em'
-                                    }}>
-                                        已选择
-                                    </span>
-                                )}
+                            <div className={styles.setOptionHeader}>
+                                <span className={styles.setOptionName}>{info.name}</span>
+                                {currentSet === type && <span className={styles.selectedBadge}>已选择</span>}
                             </div>
-                            <div style={{
-                                fontSize: '0.85em',
-                                color: '#34c759',
-                                marginTop: '6px',
-                                fontWeight: '500'
-                            }}>
+                            <div className={styles.setOptionDesc}>
                                 {info.description}
                             </div>
                         </button>
@@ -157,100 +110,31 @@ export const ArmorSetSlot: React.FC<Props> = ({ slot }) => {
         <>
             <div
                 onClick={() => setModalOpen(true)}
-                style={{
-                    border: currentSet
-                        ? '1px solid rgba(0,113,227,0.3)'
-                        : '1px dashed rgba(0,0,0,0.15)',
-                    borderRadius: '16px',
-                    padding: '14px',
-                    minHeight: '160px',
-                    cursor: 'pointer',
-                    background: currentSet
-                        ? 'rgba(255,255,255,0.7)'
-                        : 'rgba(255,255,255,0.4)',
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    transition: 'all 0.2s ease',
-                    boxShadow: currentSet ? '0 2px 12px rgba(0,113,227,0.1)' : 'none'
-                }}
-                onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = currentSet ? '#0071e3' : 'rgba(0,0,0,0.3)';
-                    e.currentTarget.style.background = currentSet
-                        ? 'rgba(255,255,255,0.85)'
-                        : 'rgba(255,255,255,0.5)';
-                }}
-                onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = currentSet
-                        ? 'rgba(0,113,227,0.3)'
-                        : 'rgba(0,0,0,0.15)';
-                    e.currentTarget.style.background = currentSet
-                        ? 'rgba(255,255,255,0.7)'
-                        : 'rgba(255,255,255,0.4)';
-                }}
+                className={`${styles.slotCard} ${setInfo ? styles['slotCard--hasSet'] : ''}`}
             >
                 {/* 槽位名称 */}
-                <div style={{
-                    fontWeight: '600',
-                    marginBottom: '10px',
-                    color: '#1d1d1f',
-                    fontSize: '0.9rem',
-                    textAlign: 'center',
-                    padding: '4px 8px',
-                    background: 'rgba(139,92,246,0.12)',
-                    borderRadius: '8px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px'
-                }}>
+                <div className={styles.slotTitle}>
                     <span>{SLOT_ICONS[slot]}</span>
                     <span>{SLOT_NAMES[slot]}</span>
                 </div>
 
                 {/* 内容区域 */}
-                <div style={{
-                    flex: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
+                <div className={styles.content}>
                     {setInfo ? (
                         <>
-                            <div style={{
-                                fontSize: '1.1rem',
-                                fontWeight: '600',
-                                color: '#1d1d1f',
-                                marginBottom: '8px'
-                            }}>
+                            <div className={styles.setName}>
                                 {setInfo.name}
                             </div>
-                            <div style={{
-                                fontSize: '0.85rem',
-                                color: '#34c759',
-                                fontWeight: '500',
-                                padding: '4px 12px',
-                                background: 'rgba(52,199,89,0.1)',
-                                borderRadius: '6px'
-                            }}>
+                            <div className={styles.setDescription}>
                                 {setInfo.description}
                             </div>
                         </>
                     ) : (
                         <>
-                            <div style={{
-                                fontSize: '2rem',
-                                marginBottom: '8px',
-                                opacity: 0.4
-                            }}>
+                            <div className={styles.emptyIcon}>
                                 {SLOT_ICONS[slot]}
                             </div>
-                            <div style={{
-                                fontSize: '0.85rem',
-                                color: '#6e6e73'
-                            }}>
+                            <div className={styles.emptyText}>
                                 点击选择套装
                             </div>
                         </>

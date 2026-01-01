@@ -1,0 +1,74 @@
+/* ==================== 设计系统变量 ==================== */
+
+:root {
+  /* === 颜色系统 === */
+  --color-primary: #0071e3;
+  --color-primary-hover: #0077ed;
+  --color-primary-light: rgba(0, 113, 227, 0.08);
+  --color-primary-bg: rgba(0, 113, 227, 0.1);
+
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: #6e6e73;
+  --color-text-tertiary: #8e8e93;
+
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-light: rgba(0, 0, 0, 0.04);
+
+  --bg-glass: rgba(255, 255, 255, 0.65);
+  --bg-glass-strong: rgba(255, 255, 255, 0.85);
+  --bg-glass-light: rgba(255, 255, 255, 0.4);
+  --bg-overlay: rgba(0, 0, 0, 0.3);
+
+  --color-success: #34c759;
+  --color-success-bg: rgba(52, 199, 89, 0.1);
+  --color-warning: #ff9500;
+  --color-warning-bg: rgba(255, 149, 0, 0.1);
+  --color-error: #ff3b30;
+  --color-error-bg: rgba(255, 59, 48, 0.1);
+
+  /* 流派颜色 */
+  --color-mingjin: #f59e0b;
+  --color-lieshi: #ef4444;
+  --color-qiansi: #06b6d4;
+  --color-pozhu: #8b5cf6;
+
+  /* === 间距系统 === */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+
+  /* === 圆角系统 === */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+
+  /* === 字体系统 === */
+  --font-size-xs: 0.7rem;
+  --font-size-sm: 0.8rem;
+  --font-size-md: 0.85rem;
+  --font-size-lg: 0.9rem;
+  --font-size-xl: 0.95rem;
+  --font-size-2xl: 1.1rem;
+  --font-size-3xl: 1.3rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* === 阴影系统 === */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.08);
+
+  /* === 模糊效果 === */
+  --blur-sm: blur(10px);
+  --blur-md: blur(20px);
+  --blur-lg: blur(30px);
+}

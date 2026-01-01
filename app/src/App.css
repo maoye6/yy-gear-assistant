@@ -1,394 +1,241 @@
-/* src/App.css - Apple Style Frosted Glass Design with Responsive Layout */
+/* ==================== 应用主布局 (CSS Grid) ==================== */
 
-/* Global Reset & Base Styles */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  /* Fresh gradient background with light blue tint */
-  background: linear-gradient(135deg, #e8f4fc 0%, #d4ecf9 25%, #c5e0f5 50%, #b8dcf0 75%, #a8d4eb 100%);
-  /* Soft animated gradient */
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  color: #1d1d1f;
-  min-height: 100vh;
-  /* Ensure background covers full viewport on mobile */
-  background-attachment: fixed;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* --- Layout Grid --- */
 .app-container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: clamp(12px, 2vw, 20px);
-  min-height: 100vh;
-}
-
-.main-layout {
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  grid-template-columns: minmax(280px, 18%) 1fr;
-  grid-template-rows: auto auto;
-  gap: clamp(12px, 2vw, 24px);
-  align-items: start;
+  grid-template-areas:
+    "header header"
+    "stats   main";
+  grid-template-rows: 10vh 90vh;
+  grid-template-columns: 20vw minmax(0, 1fr);
+  gap: 0;
+  overflow: hidden;
+  padding: 0;
 }
 
-/* Content Area Layout */
-.content-area {
+/* === Header === */
+.app-header {
+  grid-area: header;
   display: flex;
   flex-direction: column;
-  gap: clamp(12px, 2vw, 20px);
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-}
-
-/* Row 1: 流派心法 + 装备配置 */
-.row-1 {
-  display: flex;
-  gap: clamp(12px, 2vw, 20px);
-  min-height: 500px;
-  max-height: 700px;
-  height: auto;
-  min-width: 0;
-}
-
-.row-1>.card:first-child {
-  flex: 0 0 35%;
-  min-width: 280px;
-  max-width: 480px;
-}
-
-.row-1>.card:last-child {
-  flex: 1;
-  min-width: 0;
-}
-
-/* Row 2: 装备评分 + 优化建议 + 理论最优 */
-.row-2 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 2vw, 20px);
-  min-height: 280px;
-  max-height: 40vh;
-  width: 100%;
-}
-
-/* --- Responsive Breakpoints --- */
-
-/* Large Desktop (1600px+) */
-@media (min-width: 1600px) {
-  .main-layout {
-    grid-template-columns: 320px 1fr;
-  }
-}
-
-/* Medium Desktop (1200px - 1599px) */
-@media (max-width: 1599px) and (min-width: 1200px) {
-  .main-layout {
-    grid-template-columns: 300px 1fr;
-  }
-
-  .row-1>.card:first-child {
-    flex: 0 0 32%;
-    max-width: 420px;
-  }
-}
-
-/* Small Desktop / Tablet Landscape (1024px - 1199px) */
-@media (max-width: 1199px) and (min-width: 1024px) {
-  .main-layout {
-    grid-template-columns: 280px 1fr;
-  }
-
-  .row-1 {
-    flex-direction: column;
-    max-height: none;
-  }
-
-  .row-1>.card:first-child {
-    flex: 0 0 auto;
-    max-width: 100%;
-    min-width: auto;
-  }
-
-  .row-1>.card:last-child {
-    flex: 0 0 auto;
-  }
-}
-
-/* Tablet Portrait (768px - 1023px) */
-@media (max-width: 1023px) and (min-width: 768px) {
-  .main-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-sidebar {
-    position: static !important;
-    width: 100%;
-    margin-bottom: 0;
-  }
-
-  .row-1 {
-    flex-direction: column;
-    max-height: none;
-    min-height: auto;
-  }
-
-  .row-1>.card:first-child {
-    flex: 0 0 auto;
-    max-width: 100%;
-    min-width: auto;
-  }
-
-  .row-1>.card:last-child {
-    flex: 0 0 auto;
-  }
-
-  .row-2 {
-    grid-template-columns: repeat(2, 1fr);
-    min-height: auto;
-    max-height: none;
-  }
-
-  .row-2>div:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
-/* Mobile (Below 768px) */
-@media (max-width: 767px) {
-  .app-container {
-    padding: 12px;
-  }
-
-  .main-layout {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .stats-sidebar {
-    position: static !important;
-    width: 100%;
-    margin-bottom: 0;
-    padding: 16px;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .row-1 {
-    flex-direction: column;
-    max-height: none;
-    min-height: auto;
-    gap: 12px;
-  }
-
-  .row-1>.card:first-child,
-  .row-1>.card:last-child {
-    flex: 0 0 auto;
-    max-width: 100%;
-    min-width: auto;
-  }
-
-  .row-2 {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    max-height: none;
-  }
-
-  .card {
-    padding: 16px;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-  }
-}
-
-/* --- Components --- */
-
-/* Equipment Grid - 5 columns layout */
-.equipment-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: clamp(8px, 1.5vw, 12px);
-  width: 100%;
-}
-
-/* Tablet: 3 columns + 2 columns for armor sets */
-@media (max-width: 1199px) and (min-width: 768px) {
-  .equipment-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-  }
-}
-
-/* Mobile: 2 columns */
-@media (max-width: 767px) {
-  .equipment-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px;
-  }
-}
-
-/* Small Mobile: Ensure equipment cards are not too small */
-@media (max-width: 400px) {
-  .equipment-grid {
-    grid-template-columns: 1fr !important;
-    gap: 8px;
-  }
-}
-
-/* Frosted Glass Card Style */
-.stats-sidebar,
-.card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.65);
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 2vw;
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-radius: clamp(12px, 2vw, 20px);
-  padding: clamp(16px, 2vw, 24px);
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.02),
-    0 8px 16px rgba(0, 0, 0, 0.04),
-    0 16px 32px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   overflow: hidden;
 }
 
-.stats-sidebar {
-  position: sticky;
-  top: 20px;
-  padding: clamp(16px, 2vw, 20px);
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Subtle inner glow for glass effect */
-.stats-sidebar::before,
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: clamp(12px, 2vw, 20px);
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Typography */
-h1 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  margin-bottom: 0.5rem;
-  text-align: center;
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vh, 2.5rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   color: #1d1d1f;
 }
 
-h2 {
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
-  margin-bottom: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: #1d1d1f;
-}
-
-h3 {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  font-weight: 600;
-  color: #1d1d1f;
-}
-
-p.subtitle {
-  text-align: center;
+.app-header .subtitle {
+  margin: 0.5vh 0 0;
+  font-size: clamp(0.7rem, 1.5vh, 0.95rem);
   color: #6e6e73;
-  margin-bottom: clamp(1rem, 3vw, 2rem);
-  font-size: clamp(0.8rem, 2vw, 0.95rem);
 }
 
-/* Utilities */
-.flex-between {
+/* === Stats Sidebar === */
+.stats-sidebar {
+  grid-area: stats;
+  padding: 2vh 1.5vw;
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 16px;
+  margin: 0 0 0 0.5vw;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-/* Custom Scrollbar - Frosted Glass Light Blue Style */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+.stats-sidebar > * {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
 }
 
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
+/* === Content Area === */
+.content-area {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 47vh 42vh;
+  gap: 0.5vw;
+  padding: 0 0.5vw;
+  overflow: hidden;
+  grid-template-areas:
+    "school equipment equipment"
+    "report suggestion optimal";
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 113, 227, 0.4);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.2);
+.content-area > * {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 16px;
+  padding: 2vh 1.5vw;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 113, 227, 0.6);
-  box-shadow: 0 2px 12px rgba(0, 113, 227, 0.3);
+.area-school {
+  grid-area: school;
 }
 
-::-webkit-scrollbar-thumb:active {
-  background: rgba(0, 113, 227, 0.7);
+.area-equipment {
+  grid-area: equipment;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.5vh 0.5vw;
 }
 
-::-webkit-scrollbar-corner {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+.area-report {
+  grid-area: report;
 }
 
-/* Firefox Scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 113, 227, 0.5) rgba(255, 255, 255, 0.3);
+.area-suggestion {
+  grid-area: suggestion;
 }
 
-/* Prevent horizontal overflow on mobile */
-@media (max-width: 767px) {
+.area-optimal {
+  grid-area: optimal;
+}
 
-  html,
-  body {
-    overflow-x: hidden;
+/* === Equipment Grid === */
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* === 响应式断点 === */
+
+/* Tablet (1024px - 1199px) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .app-container {
+    grid-template-rows: 18vh 82vh;
+    grid-template-columns: 320px minmax(0, 1fr);
   }
 
-  .stats-section {
-    overflow-x: auto;
+  .content-area {
+    grid-template-rows: 45vh 37vh;
+    gap: 12px;
+  }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .app-container {
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main";
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .stats-sidebar {
+    display: none;
+  }
+
+  .content-area {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "school equipment"
+      "report suggestion"
+      "optimal optimal";
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+  html {
+    overflow: auto !important;
+    height: auto !important;
+    width: auto !important;
+    max-height: none !important;
+  }
+
+  body {
+    overflow: auto !important;
+    height: auto !important;
+    width: 100% !important;
+    max-height: none !important;
+  }
+
+  .app-container {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh;
+    height: auto !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .app-header {
+    flex-shrink: 0;
+    padding: 12px;
+    height: auto !important;
+  }
+
+  .stats-sidebar {
+    display: flex;
+    padding: 12px;
+    flex-shrink: 0;
+    margin: 12px;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  .content-area {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 12px;
+    gap: 12px;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .content-area > * {
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .equipment-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: auto !important;
+    gap: 8px;
+  }
+}
+
+/* Small Mobile (< 480px) */
+@media (max-width: 479px) {
+  .equipment-grid {
+    grid-template-columns: 1fr !important;
   }
 }

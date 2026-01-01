@@ -6,6 +6,7 @@ import { useAppStore } from '../store/AppContext';
 import { AffixInput } from './AffixInput';
 import { AffixPools, GameConstants } from '../data/loaders';
 import { checkAffixConflict, getConflictMessage } from '../core/affixConflict';
+import styles from './EquipmentEditor.module.css';
 import './Modal.css';
 
 interface Props {
@@ -107,25 +108,11 @@ export const EquipmentEditor: React.FC<Props> = ({ slot, isOpen, onClose }) => {
                 <div className="modal-header">
                     <div>
                         <h2 className="modal-title">编辑装备: {AffixPools.slots[slot].name}</h2>
-                        <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
-                            <span style={{
-                                fontSize: '0.85rem',
-                                padding: '4px 12px',
-                                background: 'rgba(0, 113, 227, 0.1)',
-                                borderRadius: '8px',
-                                color: '#0071e3',
-                                fontWeight: '500'
-                            }}>
+                        <div className={styles.badgeContainer}>
+                            <span className={`${styles.badge} ${styles['badge--primary']}`}>
                                 {schoolInfo?.name || '未选择流派'}
                             </span>
-                            <span style={{
-                                fontSize: '0.85rem',
-                                padding: '4px 12px',
-                                background: 'rgba(110, 110, 115, 0.1)',
-                                borderRadius: '8px',
-                                color: '#6e6e73',
-                                fontWeight: '500'
-                            }}>
+                            <span className={`${styles.badge} ${styles['badge--secondary']}`}>
                                 Lv.{GameConstants.levelCaps.maxCharacterLevel}
                             </span>
                         </div>
@@ -135,30 +122,20 @@ export const EquipmentEditor: React.FC<Props> = ({ slot, isOpen, onClose }) => {
 
                 {/* Content */}
                 <div className="modal-content">
-                    <div style={{ display: 'flex', gap: '16px', minWidth: 0 }}>
+                    <div className={styles.editorLayout}>
                         {/* Left Column: Gong (Initial) */}
-                        <div style={{ flex: '0 0 45%', minWidth: 0, borderRight: '1px solid rgba(0,0,0,0.06)', paddingRight: '16px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                                <h3 style={{ fontSize: '1rem', fontWeight: '600', color: '#1d1d1f', margin: 0 }}>宫 (初始词条)</h3>
+                        <div className={styles.sectionBlock}>
+                            <div className={styles.sectionHeader}>
+                                <h3 className={styles.sectionTitle}>宫 (初始词条)</h3>
                                 {gongAffixes.length > 0 && (
-                                    <button
-                                        onClick={() => setGongAffixes([])}
-                                        style={{
-                                            fontSize: '0.85rem',
-                                            color: '#ef4444',
-                                            background: 'none',
-                                            border: 'none',
-                                            cursor: 'pointer',
-                                            textDecoration: 'underline'
-                                        }}
-                                    >
+                                    <button className={styles.clearButton} onClick={() => setGongAffixes([])}>
                                         清除
                                     </button>
                                 )}
                             </div>
-                            <div style={{ fontSize: '0.85rem', color: '#6e6e73', marginBottom: '16px' }}>
+                            <p className={styles.hintText}>
                                 装备自带属性 (仅限1条)
-                            </div>
+                            </p>
 
                             {gongAffixes.length > 0 ? (
                                 <AffixInput
@@ -171,18 +148,7 @@ export const EquipmentEditor: React.FC<Props> = ({ slot, isOpen, onClose }) => {
                             ) : (
                                 <button
                                     onClick={() => setGongAffixes([{ name: '', type: 'min_attack', value: 0, range: [0, 0], quality: 'Legendary' }])}
-                                    style={{
-                                        width: '100%',
-                                        padding: '20px',
-                                        border: '1px dashed rgba(0,0,0,0.15)',
-                                        borderRadius: '12px',
-                                        background: 'rgba(255,255,255,0.5)',
-                                        cursor: 'pointer',
-                                        color: '#6e6e73',
-                                        transition: 'all 0.15s ease'
-                                    }}
-                                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,113,227,0.08)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.5)'}
+                                    className={styles.addButton}
                                 >
                                     + 点击设置宫词条
                                 </button>
@@ -190,8 +156,8 @@ export const EquipmentEditor: React.FC<Props> = ({ slot, isOpen, onClose }) => {
                         </div>
 
                         {/* Right Column: Tuning & DingYin */}
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                            <h3 style={{ fontSize: '1rem', fontWeight: '600', color: '#1d1d1f', margin: '0 0 12px 0' }}>商角徵羽 (调律)</h3>
+                        <div className={styles.sectionBlock}>
+                            <h3 className={styles.sectionTitle}>商角徵羽 (调律)</h3>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                                 <AffixInput
                                     label="商"
@@ -223,7 +189,7 @@ export const EquipmentEditor: React.FC<Props> = ({ slot, isOpen, onClose }) => {
                                 />
 
                                 <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', marginTop: '8px', paddingTop: '16px' }}>
-                                    <h3 style={{ fontSize: '1rem', fontWeight: '600', color: '#1d1d1f', margin: '0 0 12px 0' }}>定音 (最终)</h3>
+                                    <h3 className={styles.sectionTitle}>定音 (最终)</h3>
                                     <AffixInput label="定音" affix={dingyin} pool={dingyinPool} onChange={setDingYin} />
                                 </div>
                             </div>
@@ -233,7 +199,7 @@ export const EquipmentEditor: React.FC<Props> = ({ slot, isOpen, onClose }) => {
 
                 {/* Footer */}
                 <div className="modal-footer">
-                    <span style={{ fontSize: '0.85rem', color: '#6e6e73' }}>
+                    <span className={styles.footerNote}>
                         所有词条范围均为大世界等级18级标准
                     </span>
                     <div className="modal-footer-right">

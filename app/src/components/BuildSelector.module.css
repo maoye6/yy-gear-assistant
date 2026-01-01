@@ -1,0 +1,354 @@
+/**
+ * BuildSelector.module.css - 流派与心法选择器样式
+ */
+
+/* ===== 主容器 ===== */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ===== 标题行 ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: var(--font-size-md);
+  color: var(--color-text-tertiary);
+}
+
+/* ===== 流派选择网格 ===== */
+.schoolSection {
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.schoolGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 12px;
+}
+
+/* 响应式：平板以下改为 2 列 */
+@media (max-width: 1199px) {
+  .schoolGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 响应式：手机改为 2 列 */
+@media (max-width: 767px) {
+  .schoolGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.schoolButton {
+  padding: 15px 10px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--bg-glass-light);
+  backdrop-filter: var(--blur-sm);
+  -webkit-backdrop-filter: var(--blur-sm);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.schoolButton:hover {
+  background: var(--bg-glass);
+}
+
+.schoolButton--active {
+  border-width: 2px;
+  background: var(--color-primary-light);
+}
+
+.schoolButtonName {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.schoolButtonDesc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+/* ===== 当前选择展示 ===== */
+.currentSelection {
+  background: var(--bg-glass);
+  backdrop-filter: var(--blur-sm);
+  -webkit-backdrop-filter: var(--blur-sm);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.currentSelectionIcon {
+  font-size: 1.3em;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.currentSelectionInfo {
+  flex: 1;
+}
+
+.currentSelectionName {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-md);
+}
+
+.currentSelectionDesc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* ===== 心法槽位区域 ===== */
+.techniqueSection {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 8px;
+}
+
+.techniqueHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.techniqueTitle {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+}
+
+.techniqueButton {
+  padding: 5px 12px;
+  background: var(--color-primary-light);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  transition: all 0.15s ease;
+}
+
+.techniqueButton:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.techniqueSlotsScroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.techniqueSlotsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* 桌面端：4 列 */
+@media (min-width: 769px) {
+  .techniqueSlotsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== 心法槽位卡片 ===== */
+.techniqueSlot {
+  position: relative;
+  min-height: 80px;
+  padding: 10px 8px;
+  border-radius: 10px;
+  border: 1px dashed var(--color-border-light);
+  background: var(--bg-glass-light);
+  backdrop-filter: var(--blur-sm);
+  -webkit-backdrop-filter: var(--blur-sm);
+  text-align: center;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.techniqueSlot--filled {
+  border: 1px solid rgba(0, 113, 227, 0.25);
+  background: var(--color-primary-light);
+}
+
+.techniqueSlotNumber {
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.15);
+  margin-bottom: 2px;
+}
+
+.techniqueSlotLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.techniqueSlotBadge {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background: var(--color-primary);
+  color: #fff;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6em;
+  font-weight: var(--font-weight-semibold);
+}
+
+.techniqueSlotName {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-md);
+}
+
+/* ===== 心法弹窗 ===== */
+
+/* 弹窗内分组标题 */
+.modalGroupTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-md);
+  margin-bottom: 12px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.modalGroupIcon {
+  font-size: 1.2em;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.modalGroup {
+  margin-bottom: 20px;
+}
+
+.modalTechniqueGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* 心法卡片 */
+.techniqueCard {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--bg-glass);
+  backdrop-filter: var(--blur-sm);
+  -webkit-backdrop-filter: var(--blur-sm);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.techniqueCard:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-glass-strong);
+}
+
+.techniqueCard--selected {
+  border-width: 2px;
+  background: var(--color-primary-light);
+  box-shadow: 0 4px 16px rgba(0, 113, 227, 0.25);
+}
+
+.techniqueCardBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--color-primary);
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  font-weight: var(--font-weight-bold);
+}
+
+.techniqueCardName {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+  font-size: var(--font-size-md);
+  padding-right: 24px;
+}
+
+.techniqueCardBonuses {
+  font-size: var(--font-size-xs);
+  color: var(--color-success);
+  line-height: 1.4;
+}
+
+.techniqueCardNoBonuses {
+  color: var(--color-text-secondary);
+}
+
+/* 流派颜色变体 */
+.mingjin { --school-color: var(--color-mingjin); --school-bg: rgba(245,158,11,0.12); }
+.lieshi { --school-color: var(--color-lieshi); --school-bg: rgba(239,68,68,0.12); }
+.qiansi { --school-color: var(--color-qiansi); --school-bg: rgba(6,182,212,0.12); }
+.pozhu { --school-color: var(--color-pozhu); --school-bg: rgba(139,92,246,0.12); }
+.universal { --school-color: var(--color-primary); --school-bg: rgba(99,102,241,0.12); }
+
+.techniqueCard--selected.mingjin { background: var(--school-bg); border-color: var(--school-color); }
+.techniqueCard--selected.lieshi { background: var(--school-bg); border-color: var(--school-color); }
+.techniqueCard--selected.qiansi { background: var(--school-bg); border-color: var(--school-color); }
+.techniqueCard--selected.pozhu { background: var(--school-bg); border-color: var(--school-color); }
+.techniqueCard--selected.universal { background: var(--school-bg); border-color: var(--school-color); }

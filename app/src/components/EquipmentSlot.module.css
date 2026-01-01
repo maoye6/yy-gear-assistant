@@ -1,0 +1,138 @@
+/**
+ * EquipmentSlot.module.css - 装备槽位样式
+ */
+
+/* ===== 槽位卡片 ===== */
+.slot {
+  border: 1px dashed var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-md);
+  min-height: 160px;
+  cursor: pointer;
+  background: var(--bg-glass-light);
+  backdrop-filter: var(--blur-sm);
+  -webkit-backdrop-filter: var(--blur-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.slot:hover {
+  border-color: var(--color-border);
+  background: var(--bg-glass);
+}
+
+.slot--filled {
+  border: 1px solid rgba(0, 113, 227, 0.3);
+  background: var(--bg-glass);
+  box-shadow: 0 2px 12px rgba(0, 113, 227, 0.1);
+}
+
+.slot--filled:hover {
+  border-color: var(--color-primary);
+  background: var(--bg-glass-strong);
+}
+
+/* ===== 槽位名称 ===== */
+.slotName {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 10px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  text-align: center;
+  padding: 4px var(--spacing-sm);
+  background: var(--color-primary-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===== 词条列表 ===== */
+.affixList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+/* ===== 词条行 ===== */
+.affixRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* 空词条 */
+.affixRow--empty {
+  opacity: 0.5;
+  border-radius: 6px;
+}
+
+.affixRow--empty .affixLabel {
+  color: var(--color-text-tertiary);
+  font-weight: var(--font-weight-medium);
+  min-width: 28px;
+  text-align: center;
+}
+
+.affixRow--empty .affixValue {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  flex: 1;
+  text-align: right;
+}
+
+/* 已填充词条 */
+.affixRow--filled {
+  background: var(--color-primary-light);
+  border: 1px solid rgba(0, 113, 227, 0.15);
+  border-radius: var(--radius-md);
+}
+
+/* 定音词条 */
+.affixRow--dingyin {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 165, 0, 0.15));
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* ===== 词条标签 ===== */
+.affixLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  min-width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.affixLabel--dingyin {
+  color: #d97706;
+}
+
+/* ===== 词条名称 ===== */
+.affixName {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  flex: 1;
+  font-weight: var(--font-weight-medium);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===== 词条数值 ===== */
+.affixValue {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  flex-shrink: 0;
+  text-align: right;
+}

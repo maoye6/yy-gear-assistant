@@ -1,5 +1,6 @@
 import React from 'react';
 import type { EquipmentItem, EquipmentSlot as SlotType } from '../types';
+import styles from './EquipmentSlot.module.css';
 
 interface Props {
     slot: SlotType;
@@ -63,81 +64,24 @@ export const EquipmentSlot: React.FC<Props> = ({ slot, item, onClick }) => {
     return (
         <div
             onClick={onClick}
-            style={{
-                border: item ? '1px solid rgba(0,113,227,0.3)' : '1px dashed rgba(0,0,0,0.15)',
-                borderRadius: '16px',
-                padding: '14px',
-                minHeight: '160px',
-                cursor: 'pointer',
-                background: item
-                    ? 'rgba(255,255,255,0.7)'
-                    : 'rgba(255,255,255,0.4)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-                display: 'flex',
-                flexDirection: 'column',
-                transition: 'all 0.2s ease',
-                boxShadow: item ? '0 2px 12px rgba(0,113,227,0.1)' : 'none'
-            }}
-            onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = item ? '#0071e3' : 'rgba(0,0,0,0.3)';
-                e.currentTarget.style.background = item ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.5)';
-            }}
-            onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = item ? 'rgba(0,113,227,0.3)' : '1px dashed rgba(0,0,0,0.15)';
-                e.currentTarget.style.background = item ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.4)';
-            }}
+            className={`${styles.slot} ${item ? styles['slot--filled'] : ''}`}
         >
             {/* 装备部位名称 */}
-            <div style={{
-                fontWeight: '600',
-                marginBottom: '10px',
-                color: '#1d1d1f',
-                fontSize: '0.9rem',
-                textAlign: 'center',
-                padding: '4px 8px',
-                background: 'rgba(0,113,227,0.08)',
-                borderRadius: '8px'
-            }}>
+            <div className={styles.slotName}>
                 {SLOT_NAMES[slot]}
             </div>
 
             {item ? (
                 <>
                     {/* 词条列表 */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <div className={styles.affixList}>
                         {AFFIX_POSITIONS.map(position => {
                             const affix = affixList.find(a => a.position === position);
                             if (!affix) {
                                 return (
-                                    <div
-                                        key={position}
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '6px',
-                                            padding: '3px 8px',
-                                            borderRadius: '6px',
-                                            background: 'rgba(0,0,0,0.02)',
-                                            opacity: 0.5
-                                        }}
-                                    >
-                                        <span style={{
-                                            fontSize: '0.7rem',
-                                            color: '#999',
-                                            fontWeight: '500',
-                                            minWidth: '28px',
-                                            textAlign: 'center'
-                                        }}>
-                                            {position}
-                                        </span>
-                                        <span style={{
-                                            fontSize: '0.75rem',
-                                            color: '#999',
-                                            flex: 1
-                                        }}>
-                                            空
-                                        </span>
+                                    <div key={position} className={`${styles.affixRow} ${styles['affixRow--empty']}`}>
+                                        <span className={styles.affixLabel}>{position}</span>
+                                        <span className={styles.affixValue}>空</span>
                                     </div>
                                 );
                             }
@@ -146,48 +90,13 @@ export const EquipmentSlot: React.FC<Props> = ({ slot, item, onClick }) => {
                             return (
                                 <div
                                     key={position}
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '6px',
-                                        padding: '3px 8px',
-                                        borderRadius: '8px',
-                                        background: isFull
-                                            ? 'linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,165,0,0.15))'
-                                            : 'rgba(0,113,227,0.06)',
-                                        border: isFull
-                                            ? '1px solid rgba(255,215,0,0.3)'
-                                            : '1px solid rgba(0,113,227,0.15)'
-                                    }}
+                                    className={`${styles.affixRow} ${styles['affixRow--filled']} ${isFull ? styles['affixRow--dingyin'] : ''}`}
                                 >
-                                    <span style={{
-                                        fontSize: '0.7rem',
-                                        color: isFull ? '#d97706' : '#0071e3',
-                                        fontWeight: '600',
-                                        minWidth: '28px',
-                                        textAlign: 'center'
-                                    }}>
+                                    <span className={`${styles.affixLabel} ${isFull ? styles['affixLabel--dingyin'] : ''}`}>
                                         {position}
                                     </span>
-                                    <span style={{
-                                        fontSize: '0.75rem',
-                                        color: '#1d1d1f',
-                                        flex: 1,
-                                        fontWeight: '500',
-                                        whiteSpace: 'nowrap'
-                                    }}>
-                                        {affix.name}
-                                    </span>
-                                    <span style={{
-                                        fontSize: '0.75rem',
-                                        color: '#0071e3',
-                                        fontWeight: '600',
-                                        minWidth: '60px',
-                                        textAlign: 'right',
-                                        flexShrink: 0
-                                    }}>
-                                        +{formatAffixValue(affix.name, affix.value)}
-                                    </span>
+                                    <span className={styles.affixName}>{affix.name}</span>
+                                    <span className={styles.affixValue}>+{formatAffixValue(affix.name, affix.value)}</span>
                                 </div>
                             );
                         })}
@@ -215,9 +124,7 @@ export const EquipmentSlot: React.FC<Props> = ({ slot, item, onClick }) => {
                                 color: '#6e6e73',
                                 minHeight: '28px',
                                 lineHeight: '1.5',
-                                boxSizing: 'border-box',
-                                fontWeight: '400',
-                                fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif'
+                                boxSizing: 'border-box'
                             }}
                         >
                             <span style={{ fontWeight: '500' }}>{position}</span>

@@ -1,0 +1,154 @@
+/**
+ * ArmorSetSlot.module.css - 套装槽位样式
+ */
+
+/* ===== 槽位卡片 ===== */
+.slotCard {
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 14px;
+  min-height: 160px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.slotCard:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.slotCard--hasSet {
+  border: 1px solid rgba(0, 113, 227, 0.3);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 12px rgba(0, 113, 227, 0.1);
+}
+
+.slotCard--hasSet:hover {
+  border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* 移动端：调整最小高度 */
+@media (max-width: 480px) {
+  .slotCard {
+    min-height: 140px;
+    padding: 12px;
+  }
+}
+
+/* ===== 槽位标题 ===== */
+.slotTitle {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  padding: 4px 8px;
+  background: rgba(139, 92, 246, 0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* ===== 内容区域 ===== */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.setName {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.setDescription {
+  font-size: var(--font-size-sm);
+  color: var(--color-success);
+  font-weight: 500;
+  padding: 4px 12px;
+  background: rgba(52, 199, 89, 0.1);
+  border-radius: 6px;
+}
+
+/* ===== 空状态 ===== */
+.emptyIcon {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: 8px;
+  opacity: 0.4;
+}
+
+.emptyText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* ===== 弹窗样式 ===== */
+.setOption {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.setOption:hover {
+  border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.setOption--selected {
+  border: 2px solid var(--color-primary);
+  background: rgba(0, 113, 227, 0.1);
+}
+
+.setOptionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.setOptionName {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.selectedBadge {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: var(--font-size-xs);
+}
+
+.setOptionDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-success);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* 移动端：弹窗选项 */
+@media (max-width: 480px) {
+  .setOption {
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+}

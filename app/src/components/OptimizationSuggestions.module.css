@@ -1,0 +1,249 @@
+/**
+ * OptimizationSuggestions.module.css - 优化建议样式
+ */
+
+/* ===== 主容器 ===== */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 16px;
+}
+
+/* ===== 头部 ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.potentialBadge {
+  padding: 4px 10px;
+  background: linear-gradient(135deg, #34C759, #30B0C7);
+  color: #fff;
+  border-radius: 14px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ===== 可滚动内容区域 ===== */
+.scrollableContent {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+/* ===== 分组区域 ===== */
+.section {
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.emptySuggestions {
+  padding: 16px;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  background: rgba(52, 199, 89, 0.08);
+  border-radius: var(--radius-md);
+}
+
+/* ===== 重调建议卡片 ===== */
+.resetCard {
+  padding: 10px;
+  background: rgba(255, 149, 0, 0.08);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  border-left: 3px solid #FF9500;
+}
+
+.resetHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.resetSlot {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.resetEfficiency {
+  font-size: var(--font-size-sm);
+  color: #FF9500;
+  font-weight: var(--font-weight-semibold);
+}
+
+.resetMessage {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.resetThreshold {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* ===== 优化建议卡片 ===== */
+.optCard {
+  padding: 10px 12px;
+  background: rgba(52, 199, 89, 0.06);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  border-left: 3px solid #34C759;
+  transition: box-shadow 0.2s ease;
+}
+
+.optCard:hover {
+  box-shadow: 0 2px 8px rgba(52, 199, 89, 0.15);
+}
+
+.optHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.optRank {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: #34C759;
+  background: rgba(52, 199, 89, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.optSlot {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.optGain {
+  margin-left: auto;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: #34C759;
+}
+
+.optComparison {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.optCurrent {
+  flex: 1;
+  min-width: 80px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.optTarget {
+  flex: 1;
+  min-width: 80px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.optLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.optValue {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.optValue--target {
+  color: #34C759;
+  font-weight: var(--font-weight-semibold);
+}
+
+.optArrow {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.optReason {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.applyButton {
+  padding: 6px 12px;
+  background: #34C759;
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.applyButton:hover {
+  background: #2DB157;
+}
+
+/* ===== 差距指示器 ===== */
+.gapContainer {
+  padding: 12px;
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.gapContainer--large {
+  background: rgba(255, 59, 48, 0.1);
+}
+
+.gapContainer--medium {
+  background: rgba(255, 149, 0, 0.1);
+}
+
+.gapContainer--small {
+  background: rgba(52, 199, 89, 0.1);
+}
+
+.gapIcon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.gapText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}

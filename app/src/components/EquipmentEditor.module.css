@@ -1,0 +1,103 @@
+/**
+ * EquipmentEditor.module.css - 装备编辑器样式
+ */
+
+/* ===== 徽章 ===== */
+.badge {
+  font-size: var(--font-size-sm);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge--primary {
+  background: rgba(0, 113, 227, 0.1);
+  color: var(--color-primary);
+}
+
+.badge--secondary {
+  background: rgba(110, 110, 115, 0.1);
+  color: var(--color-text-secondary);
+}
+
+.badgeContainer {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ===== 编辑器布局（单栏垂直布局）===== */
+.editorLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* ===== 区块容器 ===== */
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== 分组标题 ===== */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ===== 清除按钮 ===== */
+.clearButton {
+  font-size: var(--font-size-sm);
+  color: #ef4444;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.clearButton:hover {
+  color: #dc2626;
+}
+
+/* ===== 提示文本 ===== */
+.hintText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+/* ===== 添加按钮 ===== */
+.addButton {
+  width: 100%;
+  padding: 16px;
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-lg);
+  background: var(--bg-glass-light);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  transition: all 0.15s ease;
+  font-size: var(--font-size-md);
+}
+
+.addButton:hover {
+  background: rgba(0, 113, 227, 0.08);
+  border-color: var(--color-primary);
+}
+
+/* ===== 底部说明 ===== */
+.footerNote {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
